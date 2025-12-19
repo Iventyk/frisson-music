@@ -6,4 +6,4 @@ class AlbumListView(ListView):
     model = Album
     context_object_name = "albums"
     ordering = ["-release_date"]
-    paginate_by = 30
+    paginate_by = 32
