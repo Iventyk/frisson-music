@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="album-detail">
+    <h1>{{ album.album_title }}</h1>
+    <img src="{{ album.cover_image_url }}" alt="{{ album.album_title }}">
+    <p>Release date: {{ album.release_date }}</p>
+    <p>Artists: {{ album.artists }}</p>
+    <p>Total tracks: {{ album.total_tracks }}</p>
+    <p>Tracks:</p>
+    <ol>
+      {% for track in album.tracklist.splitlines %}
+        <li>{{ track }}</li>
+      {% endfor %}
+    </ol>
+    {% if album.spotify_url %}
+      <p><a href="{{ album.spotify_url }}" target="_blank">Listen on Spotify</a></p>
+    {% endif %}
+  </div>
+{% endblock %}
