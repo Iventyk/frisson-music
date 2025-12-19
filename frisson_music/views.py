@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from .models import Album
 
-# Create your views here.
+
+class AlbumListView(ListView):
+    model = Album
+    context_object_name = "albums"
+    ordering = ["-release_date"]
+    paginate_by = 30
