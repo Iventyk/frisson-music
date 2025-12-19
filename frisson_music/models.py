@@ -13,7 +13,7 @@ class Album(models.Model):
     album_title = models.CharField(max_length=255)
     cover_image_url = models.URLField()
     part_or_season = models.CharField(max_length=255, default="Unknown")
-    release_date = models.DateField()
+    release_date = models.CharField(max_length=10, default="Unknown")
     artists = models.TextField(help_text="Comma-separated list of artists")
     tracklist = models.TextField(help_text="Each track on a new line")
     total_tracks = models.PositiveIntegerField()
