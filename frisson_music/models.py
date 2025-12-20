@@ -1,5 +1,19 @@
+from django.conf import settings
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
+
+
+class User(AbstractUser):
+    email = models.EmailField(unique=True)
+
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username"]
+
+    class Meta:
+        verbose_name = "user"
+        verbose_name_plural = "users"
 
 
 class Album(models.Model):
@@ -24,3 +38,29 @@ class Album(models.Model):
     def get_absolute_url(self):
         return reverse("frisson_music:album-detail", kwargs={"pk": self.pk})
 
+
+class Rating(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
+    )
+    album = models.ForeignKey(
+        Album, on_delete=models.CASCADE, related_name="ratings"
+    )
+    score = models.PositiveSmallIntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)]
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ("user", "album")
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
+    )
+    album = models.ForeignKey(
+        Album, on_delete=models.CASCADE, related_name="comments"
+    )
+    text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)

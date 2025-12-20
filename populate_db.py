@@ -17,7 +17,7 @@ auth_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIEN
 sp = spotipy.Spotify(auth_manager=auth_manager)
 
 # --- Album search ---
-search_queries = ["Evangelion", "Naruto", "Attack on Titan"]
+search_queries = ["Evangelion", "Naruto", "Attack on Titan", "DUNE", "DOOM", "Stranger Things"]
 max_albums_per_query = 10
 
 for query in search_queries:

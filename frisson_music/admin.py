@@ -1,3 +1,5 @@
 from django.contrib import admin
+from frisson_music.models import User
 
-# Register your models here.
+
+admin.site.register(User)
