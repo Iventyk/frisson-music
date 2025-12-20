@@ -11,6 +11,15 @@ class AlbumListView(ListView):
     ordering = ["-release_date"]
     paginate_by = 32
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        album_type = self.kwargs.get("album_type")
+
+        if album_type:
+            queryset = queryset.filter(media_type=album_type)
+
+        return queryset
+
 
 class AlbumDetailView(DetailView):
     model = Album

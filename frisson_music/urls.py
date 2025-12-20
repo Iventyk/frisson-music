@@ -9,4 +9,6 @@ urlpatterns = [
          name="album-detail"),
     path("album/<int:pk>/update/", AlbumUpdateView.as_view(),
          name="album-update"),
+    path("albums/<str:album_type>/", AlbumListView.as_view(),
+         name="album-list-by-type"),
 ]
