@@ -26,17 +26,20 @@
         </li>
 
         {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a href="#" class="nav-link">Logout</a>
-          </li>
+          <p class="mb-0">
+            <a href="#">
+              {{ user.username }}
+            </a>
+          <form method="post" action="{% url 'logout' %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-link p-0">Logout</button>
+          </form>
+          </p>
         {% else %}
-          <li class="nav-item">
-            <a href="#" class="nav-link">Login</a>
-          </li>
-          <li class="nav-item">
-            <a href="{% url 'register' %}" class="nav-link">Register</a>
-          </li>
+          <a href="{% url 'login' %}">Login</a> |
+          <a href="{% url 'register' %}">Register</a>
         {% endif %}
+
       </ul>
     </div>
   </div>
