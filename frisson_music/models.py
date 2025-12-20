@@ -1,12 +1,13 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Album(models.Model):
     class MediaType(models.TextChoices):
-        SERIES = "SERIES", "Series"
-        MOVIE = "MOVIE", "Movie"
         ANIME = "ANIME", "Anime"
+        SERIES = "SERIES", "Series"
         GAME = "GAME", "Game"
+        MOVIE = "MOVIE", "Movie"
 
     media_type = models.CharField(max_length=10, choices=MediaType.choices)
     media_title = models.CharField(max_length=255)
@@ -19,3 +20,7 @@ class Album(models.Model):
     total_tracks = models.PositiveIntegerField()
     spotify_url = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def get_absolute_url(self):
+        return reverse("frisson_music:album-detail", kwargs={"pk": self.pk})
+

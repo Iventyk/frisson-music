@@ -3,6 +3,9 @@
 {% block content %}
   <div class="album-detail">
     <h1>{{ album.album_title }}</h1>
+    <a href="{% url 'album-update' album.pk %}" class="btn btn-warning">
+      Edit album
+    </a>
     <img src="{{ album.cover_image_url }}" alt="{{ album.album_title }}">
     <p>Release date: {{ album.release_date }}</p>
     <p>Artists: {{ album.artists }}</p>

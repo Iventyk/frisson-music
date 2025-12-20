@@ -1,4 +1,7 @@
-from django.views.generic import ListView, DetailView
+from django.urls import reverse_lazy, reverse
+from django.views.generic import ListView, DetailView, UpdateView
+
+from .forms import AlbumUpdateForm
 from .models import Album
 
 
@@ -12,3 +15,19 @@ class AlbumListView(ListView):
 class AlbumDetailView(DetailView):
     model = Album
     context_object_name = "album"
+
+
+class AlbumUpdateView(UpdateView):
+    model = Album
+    form_class = AlbumUpdateForm
+
+    def get_success_url(self):
+        return reverse(
+            "album-detail",
+            kwargs={"pk": self.object.pk}
+        )
+
+
+
+
+
