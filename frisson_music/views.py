@@ -1,7 +1,13 @@
 from django.urls import reverse_lazy, reverse
-from django.views.generic import ListView, DetailView, UpdateView, TemplateView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    UpdateView,
+    TemplateView,
+    CreateView
+)
 
-from .forms import AlbumUpdateForm
+from .forms import AlbumUpdateForm, CustomUserCreationForm
 from .models import Album
 
 
@@ -53,12 +59,13 @@ class AlbumUpdateView(UpdateView):
     form_class = AlbumUpdateForm
 
     def get_success_url(self):
-        return reverse(
-            "album-detail",
-            kwargs={"pk": self.object.pk}
-        )
+        return reverse("album-detail", kwargs={"pk": self.object.pk})
 
 
+class RegisterView(CreateView):
+    form_class = CustomUserCreationForm
+    template_name = "accounts/register.html"
+    success_url = reverse_lazy("login")
 
 
 

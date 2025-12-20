@@ -1,5 +1,7 @@
 from django import forms
-from .models import Album
+from django.contrib.auth.forms import UserCreationForm
+
+from .models import Album, User
 
 
 class AlbumUpdateForm(forms.ModelForm):
@@ -17,3 +19,9 @@ class AlbumUpdateForm(forms.ModelForm):
             "total_tracks",
             "spotify_url",
         ]
+
+
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ("email", "username", "password1", "password2")

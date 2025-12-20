@@ -1,14 +1,17 @@
+from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 from .views import (
     HomePageView,
     AlbumListView,
     AlbumDetailView,
     AlbumUpdateView,
+    RegisterView,
 )
 
 
 urlpatterns = [
     path("", HomePageView.as_view(), name="home"),
+    path("register/", RegisterView.as_view(), name="register"),
     path("albums/", AlbumListView.as_view(),
          name="album-list"),
     path("album/<int:pk>/", AlbumDetailView.as_view(),
