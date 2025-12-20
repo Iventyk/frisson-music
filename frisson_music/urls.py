@@ -1,8 +1,14 @@
 from django.urls import path
-from .views import AlbumListView, AlbumDetailView, AlbumUpdateView
+from .views import (
+    HomePageView,
+    AlbumListView,
+    AlbumDetailView,
+    AlbumUpdateView,
+)
 
 
 urlpatterns = [
+    path("", HomePageView.as_view(), name="home"),
     path("albums/", AlbumListView.as_view(),
          name="album-list"),
     path("album/<int:pk>/", AlbumDetailView.as_view(),

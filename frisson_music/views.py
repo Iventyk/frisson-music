@@ -1,8 +1,30 @@
 from django.urls import reverse_lazy, reverse
-from django.views.generic import ListView, DetailView, UpdateView
+from django.views.generic import ListView, DetailView, UpdateView, TemplateView
 
 from .forms import AlbumUpdateForm
 from .models import Album
+
+
+class HomePageView(TemplateView):
+    template_name = "frisson_music/home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["latest_anime"] = Album.objects.filter(
+            media_type="ANIME"
+        ).order_by('-release_date')[:5]
+        context["latest_series"] = Album.objects.filter(
+            media_type="SERIES"
+        ).order_by('-release_date')[:5]
+        context["latest_game"] = Album.objects.filter(
+            media_type="GAME"
+        ).order_by('-release_date')[:5]
+        context["latest_movie"] = Album.objects.filter(
+            media_type="MOVIE"
+        ).order_by('-release_date')[:5]
+
+        return context
 
 
 class AlbumListView(ListView):
