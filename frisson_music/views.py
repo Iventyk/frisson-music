@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
 from django.views.generic import (
     ListView,
@@ -7,8 +8,8 @@ from django.views.generic import (
     CreateView
 )
 
-from .forms import AlbumUpdateForm, CustomUserCreationForm
-from .models import Album
+from .forms import AlbumUpdateForm, CustomUserCreationForm, UserUpdateForm
+from .models import Album, User
 
 
 class HomePageView(TemplateView):
@@ -68,4 +69,11 @@ class RegisterView(CreateView):
     success_url = reverse_lazy("login")
 
 
+class UserUpdateView(LoginRequiredMixin, UpdateView):
+    model = User
+    form_class = UserUpdateForm
+    template_name = "registration/profile_edit.html"
+    success_url = reverse_lazy("home")
 
+    def get_object(self, queryset=None):
+        return self.request.user

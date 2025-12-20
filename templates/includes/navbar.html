@@ -27,7 +27,7 @@
 
         {% if user.is_authenticated %}
           <p class="mb-0">
-            <a href="#">
+            <a href="{% url 'profile-edit' %}">
               {{ user.username }}
             </a>
           <form method="post" action="{% url 'logout' %}" style="display:inline;">
