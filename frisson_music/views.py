@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, get_object_or_404
@@ -60,20 +62,6 @@ class AlbumListView(ListView):
             queryset = queryset.filter(album_title__icontains=search_query)
 
         return queryset
-
-
-class MediaListView(ListView):
-    template_name = "frisson_music/media_list.html"
-    context_object_name = "media_list"
-    paginate_by = 15
-
-    def get_queryset(self):
-        return (
-            Album.objects
-            .values("media_title", "media_type")
-            .distinct()
-            .order_by("media_title")
-        )
 
 
 class AlbumDetailView(DetailView):
@@ -150,6 +138,53 @@ class AlbumUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_success_url(self):
         return reverse("album-detail", kwargs={"pk": self.object.pk})
+
+
+class MediaListView(ListView):
+    template_name = "frisson_music/media_list.html"
+    context_object_name = "media_list"
+    paginate_by = 15
+
+    def get_queryset(self):
+        return (
+            Album.objects
+            .exclude(media_title__isnull=True)
+            .exclude(media_title__exact="")
+            .order_by("media_title")
+            .values("media_title", "media_type")
+            .distinct()
+        )
+
+
+class MediaDetailView(ListView):
+    model = Album
+    template_name = "frisson_music/media_detail.html"
+    context_object_name = "albums"
+
+    def get_queryset(self):
+        media_title = self.kwargs.get("media_title")
+        media_type = self.request.GET.get("type")
+        queryset = Album.objects.filter(media_title=media_title)
+        if media_type:
+            queryset = queryset.filter(media_type=media_type)
+        return queryset.order_by("part_or_season", "-release_date")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        media_title = self.kwargs.get("media_title")
+        media_type = self.request.GET.get("type")
+        context["media_title"] = media_title
+        context["media_type"] = media_type
+
+        # Group by Part/Season
+        albums = self.get_queryset()
+        grouped_albums = defaultdict(list)
+        for album in albums:
+            grouped_albums[album.part_or_season].append(album)
+
+        # Sort by key
+        context["grouped_albums"] = dict(sorted(grouped_albums.items()))
+        return context
 
 
 class RegisterView(CreateView):
