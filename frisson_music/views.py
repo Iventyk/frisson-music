@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import (
     ListView,
@@ -8,7 +9,7 @@ from django.views.generic import (
     CreateView
 )
 
-from .forms import AlbumUpdateForm, CustomUserCreationForm, UserUpdateForm
+from .forms import AlbumUpdateForm, CustomUserCreationForm, UserUpdateForm, CommentForm
 from .models import Album, User
 
 
@@ -54,8 +55,29 @@ class AlbumDetailView(DetailView):
     model = Album
     context_object_name = "album"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["comments"] = self.object.comments.order_by("-created_at")
+        context["comment_form"] = CommentForm()
+        return context
 
-class AlbumUpdateView(UpdateView):
+    def post(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return redirect("login")
+
+        self.object = self.get_object()
+        form = CommentForm(request.POST)
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.album = self.object
+            comment.user = request.user
+            comment.save()
+
+        return redirect("album-detail", pk=self.object.pk)
+
+
+class AlbumUpdateView(LoginRequiredMixin, UpdateView):
     model = Album
     form_class = AlbumUpdateForm
 
