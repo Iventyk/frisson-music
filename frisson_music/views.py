@@ -72,7 +72,8 @@ class AlbumDetailView(DetailView):
         context = super().get_context_data(**kwargs)
 
         # Comments
-        context["comments"] = self.object.comments.select_related("user").order_by("-created_at")
+        context["comments"] = (self.object.comments.select_related("user")
+                               .order_by("-created_at"))
         context["comment_form"] = CommentForm()
 
         # Rating: Average
