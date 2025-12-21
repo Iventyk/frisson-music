@@ -7,7 +7,7 @@ from .views import (
     AlbumDetailView,
     AlbumUpdateView,
     RegisterView,
-    UserUpdateView,
+    UserUpdateView, MediaListView,
 )
 
 
@@ -16,6 +16,8 @@ urlpatterns = [
     path("register/", RegisterView.as_view(), name="register"),
     path("accounts/", include("django.contrib.auth.urls")),
     path("profile/edit/", UserUpdateView.as_view(), name="profile-edit"),
+    path("media/", MediaListView.as_view(),
+         name="media-list"),
     path("albums/", AlbumListView.as_view(),
          name="album-list"),
     path("album/<int:pk>/", AlbumDetailView.as_view(),

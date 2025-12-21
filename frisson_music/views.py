@@ -62,6 +62,20 @@ class AlbumListView(ListView):
         return queryset
 
 
+class MediaListView(ListView):
+    template_name = "frisson_music/media_list.html"
+    context_object_name = "media_list"
+    paginate_by = 15
+
+    def get_queryset(self):
+        return (
+            Album.objects
+            .values("media_title", "media_type")
+            .distinct()
+            .order_by("media_title")
+        )
+
+
 class AlbumDetailView(DetailView):
     model = Album
     context_object_name = "album"
