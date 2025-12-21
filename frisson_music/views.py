@@ -72,11 +72,11 @@ class AlbumDetailView(DetailView):
         context = super().get_context_data(**kwargs)
 
         # Comments
-        context["comments"] = self.object.comments.order_by("-created_at")
+        context["comments"] = self.object.comments.select_related("user").order_by("-created_at")
         context["comment_form"] = CommentForm()
 
         # Rating: Average
-        ratings = self.object.ratings.all()
+        ratings = self.object.ratings.select_related("user").all()
         if ratings.exists():
             avg = round(sum(r.score for r in ratings) / ratings.count(), 1)
         else:
