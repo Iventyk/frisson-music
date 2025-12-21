@@ -30,14 +30,9 @@
             <a href="{% url 'profile-edit' %}">
               {{ user.username }}
             </a>
-          <form method="post" action="{% url 'logout' %}" style="display:inline;">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-link p-0">Logout</button>
-          </form>
           </p>
         {% else %}
-          <a href="{% url 'login' %}">Login</a> |
-          <a href="{% url 'register' %}">Register</a>
+          <a href="{% url 'login' %}">Login</a>
         {% endif %}
 
       </ul>
