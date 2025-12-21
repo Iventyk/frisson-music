@@ -51,9 +51,13 @@ class AlbumListView(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         album_type = self.kwargs.get("album_type")
+        search_query = self.request.GET.get("search")
 
         if album_type:
             queryset = queryset.filter(media_type=album_type)
+
+        if search_query:
+            queryset = queryset.filter(album_title__icontains=search_query)
 
         return queryset
 

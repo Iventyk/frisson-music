@@ -20490,4 +20490,56 @@ Copyright (c) 2015 Daniel Eden
   display: inline-block;
 }
 
+/* ===== SEARCH IN NAVBAR ===== */
+
+.search-input-navbar {
+  width: 240px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  margin-right: 6px;
+}
+
+.search-input-navbar::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input-navbar:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  box-shadow: none;
+  color: #ffffff;
+}
+
+/* SEARCH ICON */
+.search-button-navbar {
+  padding: 0;
+}
+
+.search-button-navbar i {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.search-button-navbar:hover i {
+  color: #ffffff;
+}
+
+/* ===== USER BADGE ===== */
+
+.user-badge {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.user-badge:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=dashboard-free.css.map */
