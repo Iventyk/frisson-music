@@ -1,5 +1,6 @@
-from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path, include
+
+from . import views
 from .views import (
     HomePageView,
     AlbumListView,
@@ -23,4 +24,6 @@ urlpatterns = [
          name="album-update"),
     path("albums/<str:album_type>/", AlbumListView.as_view(),
          name="album-list-by-type"),
+    path("comment/<int:comment_id>/delete/", views.delete_comment,
+         name="delete-comment"),
 ]

@@ -1,5 +1,6 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import (
     ListView,
@@ -16,7 +17,7 @@ from .forms import (
     CommentForm,
     RatingForm
 )
-from .models import Album, User, Rating
+from .models import Album, User, Rating, Comment
 
 
 class HomePageView(TemplateView):
@@ -147,3 +148,13 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
 
     def get_object(self, queryset=None):
         return self.request.user
+
+
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    if comment.user == request.user:
+        album_id = comment.album.id
+        comment.delete()
+        return redirect("album-detail", pk=album_id)
+    return redirect("album-detail", pk=comment.album.id)
