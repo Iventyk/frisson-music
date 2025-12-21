@@ -15,10 +15,11 @@
       </li>
       <li>
         <a href="{% url "album-list" %}">
-          <i class="tim-icons icon-sound-wave"></i>
+          <i class="tim-icons icon-headphones"></i>
           <p>All Albums</p>
         </a>
       </li>
+      <hr class="my-1">
       <li>
         <a href="{% url 'album-list-by-type' 'ANIME' %}">
           <i class="tim-icons icon-atom"></i>
@@ -41,6 +42,19 @@
         <a href="{% url 'album-list-by-type' 'MOVIE' %}">
           <i class="tim-icons icon-video-66"></i>
           <p>Movies</p>
+        </a>
+      </li>
+      <hr class="my-1">
+      <li>
+        <a href="{% url 'rules' %}">
+          <i class="tim-icons icon-alert-circle-exc"></i>
+          <p>RULES</p>
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'about' %}">
+          <i class="tim-icons icon-planet"></i>
+          <p>ABOUT US</p>
         </a>
       </li>
     </ul>

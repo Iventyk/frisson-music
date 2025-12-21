@@ -1,4 +1,5 @@
 from django.urls import path, include
+from django.views.generic import TemplateView
 
 from . import views
 from .views import (
@@ -25,4 +26,8 @@ urlpatterns = [
          name="album-list-by-type"),
     path("comment/<int:comment_id>/delete/", views.delete_comment,
          name="delete-comment"),
+    path("about/", TemplateView.as_view(template_name="frisson_music/about.html"),
+         name="about"),
+    path("rules/", TemplateView.as_view(template_name="frisson_music/rules.html"),
+         name="rules"),
 ]
