@@ -38,6 +38,13 @@ class Album(models.Model):
     def get_absolute_url(self):
         return reverse("frisson_music:album-detail", kwargs={"pk": self.pk})
 
+    @property
+    def average_rating(self):
+        ratings = self.ratings.all()
+        if ratings.exists():
+            return round(sum(r.score for r in ratings) / ratings.count(), 2)
+        return None
+
 
 class Rating(models.Model):
     user = models.ForeignKey(

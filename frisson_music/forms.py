@@ -2,7 +2,8 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import Album, Comment
+from .models import Album, Comment, Rating
+
 
 User = get_user_model()
 
@@ -51,3 +52,10 @@ class CommentForm(forms.ModelForm):
         }
 
 
+class RatingForm(forms.ModelForm):
+    class Meta:
+        model = Rating
+        fields = ["score"]
+        widgets = {
+            "score": forms.HiddenInput(),
+        }

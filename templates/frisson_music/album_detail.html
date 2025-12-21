@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
   <div class="content">
@@ -74,6 +75,47 @@
         <a href="{% url 'album-update' album.pk %}" class="btn btn-warning">
           Edit album
         </a>
+
+        <!-- RATING -->
+        <div class="row mt-3 mb-4">
+
+          <!-- Average Rating -->
+          <div class="col-md-3">
+            <p class="mb-1 font-weight-bold">Average rating: {{ average_rating }} / 5</p>
+            <div class="star-rating average-rating">
+              {% for i in stars %}
+                {% if i <= average_rating %}
+                  <span class="star filled">&#9733;</span>
+                {% else %}
+                  <span class="star">&#9733;</span>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+
+          <!-- My Rating -->
+          <div class="col-md-3">
+            <p class="mb-1 font-weight-bold">My rating:</p>
+            <form method="post" id="rating-form">
+              {% csrf_token %}
+              {% if user_rating %}
+                <input type="hidden" name="score" id="rating-input" value="{{ user_rating.score }}">
+              {% else %}
+                <input type="hidden" name="score" id="rating-input" value="0">
+              {% endif %}
+              <div class="star-rating user-rating">
+                {% for i in stars %}
+                  {% if user_rating and i <= user_rating.score %}
+                    <span class="star filled" data-value="{{ i }}">&#9733;</span>
+                  {% else %}
+                    <span class="star" data-value="{{ i }}">&#9733;</span>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </form>
+          </div>
+
+        </div>
       </div>
 
     </div>
@@ -144,4 +186,5 @@
     </div>
 
   </div>
+  <script src="{% static 'assets/js/rating.js' %}"></script>
 {% endblock %}

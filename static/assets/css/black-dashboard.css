@@ -20473,4 +20473,21 @@ Copyright (c) 2015 Daniel Eden
   border-radius: 8px;
 }
 
+/* ratings.css */
+.star {
+  font-size: 28px;
+  color: #ccc;        /* default grey */
+  cursor: pointer;
+  transition: color 0.2s;
+  margin-right: 2px;
+}
+
+.star.filled {
+  color: gold;        /* highlighted star */
+}
+
+.star-rating {
+  display: inline-block;
+}
+
 /*# sourceMappingURL=dashboard-free.css.map */

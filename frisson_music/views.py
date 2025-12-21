@@ -9,8 +9,14 @@ from django.views.generic import (
     CreateView
 )
 
-from .forms import AlbumUpdateForm, CustomUserCreationForm, UserUpdateForm, CommentForm
-from .models import Album, User
+from .forms import (
+    AlbumUpdateForm,
+    CustomUserCreationForm,
+    UserUpdateForm,
+    CommentForm,
+    RatingForm
+)
+from .models import Album, User, Rating
 
 
 class HomePageView(TemplateView):
@@ -57,22 +63,64 @@ class AlbumDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+
+        # Comments
         context["comments"] = self.object.comments.order_by("-created_at")
         context["comment_form"] = CommentForm()
+
+        # Rating: Average
+        ratings = self.object.ratings.all()
+        if ratings.exists():
+            avg = round(sum(r.score for r in ratings) / ratings.count(), 1)
+        else:
+            avg = 0
+        context["average_rating"] = avg
+
+        # User's Rating
+        user_rating = None
+        if self.request.user.is_authenticated:
+            try:
+                user_rating = Rating.objects.get(album=self.object,
+                                                 user=self.request.user)
+            except Rating.DoesNotExist:
+                user_rating = None
+        context["user_rating"] = user_rating
+
+        # Stars for template
+        context["stars"] = [1, 2, 3, 4, 5]
+
+        # Rating form
+        context["rating_form"] = RatingForm()
+
         return context
 
     def post(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            return redirect("login")
-
         self.object = self.get_object()
-        form = CommentForm(request.POST)
 
-        if form.is_valid():
-            comment = form.save(commit=False)
-            comment.album = self.object
-            comment.user = request.user
-            comment.save()
+        # Comment submission
+        if "text" in request.POST:
+            if not request.user.is_authenticated:
+                return redirect("login")
+            form = CommentForm(request.POST)
+            if form.is_valid():
+                comment = form.save(commit=False)
+                comment.album = self.object
+                comment.user = request.user
+                comment.save()
+            return redirect("album-detail", pk=self.object.pk)
+
+        # Rating submission
+        if "score" in request.POST:
+            if not request.user.is_authenticated:
+                return redirect("login")
+            rating_value = int(request.POST.get("score", 0))
+            if 1 <= rating_value <= 5:
+                Rating.objects.update_or_create(
+                    album=self.object,
+                    user=request.user,
+                    defaults={"score": rating_value}
+                )
+            return redirect("album-detail", pk=self.object.pk)
 
         return redirect("album-detail", pk=self.object.pk)
 
