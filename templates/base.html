@@ -1,43 +1,53 @@
 {% load static %}
+{% load bootstrap4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dydqbkfti/image/upload/v1766402285/favicon_hduyfd.png">
 
   <title>{% block title %}Frisson Music{% endblock %}</title>
 
+  {% bootstrap_css %}
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet">
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-
-  <link href="{% static "assets/css/nucleo-icons.css" %}" rel="stylesheet">
-  <link href="{% static "assets/css/black-dashboard.css" %}" rel="stylesheet">
+  <link href="{% static 'assets/css/nucleo-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/black-dashboard.css' %}" rel="stylesheet">
 </head>
 
 <body>
-  <div class="wrapper">
+<div class="wrapper">
+  {% include "includes/sidebar.html" %}
 
-    {% include "includes/sidebar.html" %}
+  <div class="main-panel">
+    {% include "includes/navbar.html" %}
 
-    <div class="main-panel">
-
-      {% include "includes/navbar.html" %}
-
-      <div class="content">
-        {% block content %}{% endblock %}
-      </div>
-
-      {% include "includes/pagination.html" %}
-
-      {% include "includes/footer.html" %}
-
+    <div class="content">
+      {% block content %}{% endblock %}
     </div>
-  </div>
 
-  <script src="{% static "assets/js/core/jquery.min.js" %}"></script>
-  <script src="{% static "assets/js/core/popper.min.js" %}"></script>
-  <script src="{% static "assets/js/core/bootstrap.min.js" %}"></script>
-  <script src="{% static "assets/js/black-dashboard.min.js" %}"></script>
+    {% include "includes/pagination.html" %}
+    {% include "includes/footer.html" %}
+  </div>
+</div>
+
+<!-- Core JS Files -->
+<script src="{% static 'assets/js/core/jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/core/popper.min.js' %}"></script>
+<script src="{% static 'assets/js/core/bootstrap.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+<script src="{% static 'assets/js/black-dashboard.min.js' %}"></script>
+
+{% bootstrap_javascript jquery='true' %}
+
+<!-- Sidebar Toggle JS -->
+<script>
+    $(document).ready(function () {
+        $('.navbar-toggler').click(function () {
+            $('#navigation').collapse('toggle');
+        });
+    });
+</script>
+
 </body>
 </html>

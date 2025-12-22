@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "frisson_music",
+    "bootstrap4",
 ]
 
 MIDDLEWARE = [
