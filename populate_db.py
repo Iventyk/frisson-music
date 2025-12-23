@@ -10,8 +10,8 @@ django.setup()
 from frisson_music.models import Album
 
 # --- Spotify setup ---
-CLIENT_ID = "747ee443bedf429aade7446a318b7085"
-CLIENT_SECRET = "08eef7f7800d47f2a0bb0eff7c8a3645"
+CLIENT_ID = "Your_spotify_client_id"
+CLIENT_SECRET = "Your_spotify_client_secret"
 
 auth_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
 sp = spotipy.Spotify(auth_manager=auth_manager)
