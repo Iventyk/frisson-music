@@ -1,45 +1,96 @@
-# Frisson Music
+# 🎵 Frisson Music
 
-**Frisson Music** is a community-driven OST hub where users can discover, rate, and comment on soundtracks from movies, series, anime, and games. The platform is designed to provide structured and accurate information about OST albums, allowing the community to collaboratively maintain and improve the database.
+**Frisson Music** is a community-driven OST hub for discovering, rating, and discussing soundtracks from movies, series, anime, and games.
 
----
-
-## Project Overview
-
-- **Purpose:**  
-  Frisson Music aims to provide a clean and structured mapping of OST albums to their respective media (movies, series, anime, games), including season/part information, release dates, artists, and tracklists.  
-
-- **Community-driven:**  
-  Users can add new albums or edit existing ones, but all submissions must be verified for accuracy. Incorrect or misleading data can result in account suspension.
-
-- **Key Features:**  
-  - Browse albums by media type or media title.  
-  - Filter and search albums by title.  
-  - Rate albums with a 1-5 star system.  
-  - Leave comments on albums.  
-  - Display average ratings and personal ratings.  
-  - Pagination for large album lists.  
-  - Dark theme with consistent UI styling.  
-  - Fully responsive design using Bootstrap.  
+The main goal of the project is to solve a common problem: **lack of structured and accurate OST-to-media mapping**.  
+Here, albums are clearly linked to media, seasons, parts, and release context — and maintained collaboratively by the community.
 
 ---
 
-## Technical Details
+## 🚀 Features
 
-- **Framework:** Django 6.0  
-- **Database:** SQLite (development) / Postgres or MySQL (production)  
-- **Frontend:** Bootstrap 5, custom CSS, JavaScript for interactive rating stars  
-- **API Integration:** Spotify API (optional) for populating albums  
-- **Templates:** Jinja2/Django templates, consistent dark theme  
-- **Static Files:** Stored in `static/`, including CSS, JS, and images  
-- **Templates:** Stored in `templates/frisson_music/`
+- Browse OST albums by:
+  - Media type (Movie / Series / Anime / Game)
+  - Specific media title
+- Search albums by title
+- Rate albums using a 1–5 star system
+- View:
+  - Average album rating
+  - Your personal rating
+- Leave comments on albums
+- Pagination for large album lists
+- Dark-themed UI based on **Black Dashboard**
+- Fully responsive layout (desktop & mobile)
+- Community-driven moderation:
+  - Users can suggest edits
+  - Incorrect or misleading data may result in account suspension
 
 ---
 
-## Populating the Database
+## 🧠 Project Philosophy
+
+Frisson Music is built around **community trust and data accuracy**.
+
+Instead of chaotic OST dumps, the platform enforces a structured hierarchy:
+
+Media → Seasons / Parts → OST Albums → Tracks
+
+This allows users to:
+- Clearly understand where an OST belongs
+- Avoid duplicated or incorrectly labeled albums
+- Maintain high-quality metadata over time
+
+---
+
+## 🛠 Tech Stack
+
+- **Backend:** Django
+- **Database:**  
+  - SQLite (development)  
+  - PostgreSQL / MySQL (production)
+- **Frontend:**  
+  - Bootstrap  
+  - Custom CSS  
+  - JavaScript (interactive rating stars)
+- **UI Template:**  
+  - Black Dashboard (Creative Tim)
+- **Static files:**  
+  - CSS, JS, icons, images stored in `static/`
+- **Templates:**  
+  - Django templates
+
+---
+
+## 🔌 Spotify API Integration
+
+The project supports optional database population via **Spotify API**.
+
+### Populate Database
 
 - Edit `populate_db.py` file to use your own search parameters
-- Use `python populate_db.py` command to run script 
+1. Configure Spotify credentials
+2. Edit search parameters inside:
+
+- Use `python populate_db.py` command to run script (bash)
+
+---
+
+## Test Users
+
+- superuser `mine@gmail.com` `qqq333qqq`
+- other `test@gmail.com` `poiuy098`
+
+---
+
+## 📦 Installation (Development)
+
+- `git clone https://github.com/your-username/frisson_music.git`
+- `cd frisson_music`
+- `python -m venv venv`
+- `source venv/bin/activate`  # Windows: `venv\Scripts\activate`
+- `pip install -r requirements.txt`
+- `python manage.py migrate`
+- `python manage.py runserver`
 
 ---
 
@@ -52,10 +103,3 @@
 ## Data Base Diagram
 
 ![Data_Base_Diagram](DB_Diagram.drawio.png)
-
----
-
-## Test Users
-
-- superuser `mine@gmail.com` `qqq333qqq`
-- other `test@gmail.com` `poiuy098`
