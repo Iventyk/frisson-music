@@ -1,4 +1,6 @@
-# 🎵 Frisson Music
+[![wakatime](https://wakatime.com/badge/user/ddd893b9-21da-4cb4-9172-465025e48d6b/project/93c4c1be-2695-4d26-a35d-13d5c789bf9f.svg)](https://wakatime.com/projects/frisson_music)
+
+## 🎵 Frisson Music
 
 **Frisson Music** is a community-driven OST hub for discovering, rating, and discussing soundtracks from movies, series, anime, and games.
 
