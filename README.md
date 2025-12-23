@@ -7,6 +7,14 @@ Here, albums are clearly linked to media, seasons, parts, and release context �
 
 ---
 
+## 🌍 Deployed Application
+
+Live version of the project available here:  
+
+-  https://frisson-music.onrender.com
+
+---
+
 ## 🚀 Features
 
 - Browse OST albums by:
