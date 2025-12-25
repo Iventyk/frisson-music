@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="row">
+      {% for media in media_list %}
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <a href="{% url 'media-detail' media_title=media.media_title %}" class="text-decoration-none">
+              <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                <h5 class="card-title text-light text-center">{{ media.media_title }}</h5>
+                <p class="card-text text-secondary text-center">{{ media.media_type|title }}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      {% empty %}
+        <p class="text-light">Database is Empty 😢</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

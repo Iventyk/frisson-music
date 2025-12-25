@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="content">
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card text-center text-white"
+             style="background-image: url('https://res.cloudinary.com/dydqbkfti/image/upload/v1766408208/c660b845-5a1c-46bd-a86c-8968534db5ea.png');
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                background-position: top center;
+                border: none;">
+
+          <div class="card-body py-4" style="background: rgba(0, 0, 0, 0.4);">
+            <h1 class="card-title mb-2">
+              Frisson Music
+            </h1>
+            <p class="card-text">
+              “Because OSTs deserve structure”
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANIME -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">
+              <a href="{% url 'album-list-by-type' 'ANIME' %}" class="section-link">
+                Latest Anime OST
+              </a>
+            </h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              {% for album in latest_anime %}
+                <div class="col-md-2 col-sm-4 col-6">
+                  <a href="{% url 'album-detail' album.pk %}">
+                    <img src="{{ album.cover_image_url }}"
+                         class="img-fluid rounded mb-2">
+                    <p class="text-center small">{{ album.album_title }}</p>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERIES -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">
+              <a href="{% url 'album-list-by-type' 'SERIES' %}" class="section-link">
+                Latest Series OST
+              </a>
+            </h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              {% for album in latest_series %}
+                <div class="col-md-2 col-sm-4 col-6">
+                  <a href="{% url 'album-detail' album.pk %}">
+                    <img src="{{ album.cover_image_url }}"
+                         class="img-fluid rounded mb-2">
+                    <p class="text-center small">{{ album.album_title }}</p>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAMES -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">
+              <a href="{% url 'album-list-by-type' 'GAME' %}" class="section-link">
+                Latest Game OST
+              </a>
+            </h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              {% for album in latest_game %}
+                <div class="col-md-2 col-sm-4 col-6">
+                  <a href="{% url 'album-detail' album.pk %}">
+                    <img src="{{ album.cover_image_url }}"
+                         class="img-fluid rounded mb-2">
+                    <p class="text-center small">{{ album.album_title }}</p>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOVIES -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">
+              <a href="{% url 'album-list-by-type' 'MOVIE' %}" class="section-link">
+                Latest Movie OST
+              </a>
+            </h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              {% for album in latest_movie %}
+                <div class="col-md-2 col-sm-4 col-6">
+                  <a href="{% url 'album-detail' album.pk %}">
+                    <img src="{{ album.cover_image_url }}"
+                         class="img-fluid rounded mb-2">
+                    <p class="text-center small">{{ album.album_title }}</p>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

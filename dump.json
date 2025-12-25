@@ -1,0 +1,1292 @@
+[
+{
+    "model": "frisson_music.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$3bGeIy2bBXAVZu9KpMtC9w$7KF2CKEySFOKhxDI/LgMg5VBqaP2b0nQEUygZA3BtDo=",
+        "last_login": "2025-12-22T13:58:38.549Z",
+        "is_superuser": false,
+        "username": "lololoolo",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-12-20T16:36:18.731Z",
+        "email": "test@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "frisson_music.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$z9EI7GDPY8pzQUl7vB6KVI$OsI3rrJ5lvcAtsLU1QdDsN15+9GjJp2xEZllTGs2Qxc=",
+        "last_login": "2025-12-22T13:55:15.969Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "Ivan",
+        "last_name": "Ventyk",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-12-20T16:39:03.791Z",
+        "email": "mine@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "frisson_music.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$U3S5342jiP385wr7EUgKZX$6WY8g/SlZVvXjWfd0sTdeim6aC4cClMV5Ro58sP1chE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "lskasjdadf",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-12-20T18:18:20.497Z",
+        "email": "test1@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "frisson_music.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$1GOGNmxhnW772VZQF4zMl8$vHwgMzmlCIzF0pbaW0QPitmCZy9w7zQSeUassa5+jSg=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jffevvf",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-12-23T11:10:21.261Z",
+        "email": "test2@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "frisson_music.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$3mXeSOOewFM0FO19gKrATm$UU6eZhzjRQpClWUDHpc94TbhJooEc309IkbWbrfQuDY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ergeggt",
+        "first_name": "",
+        "last_name": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-12-23T11:12:45.658Z",
+        "email": "test3@gmail.com",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 1,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Evangelion Finally",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2736df828bb10343f7bad08d4fe",
+        "part_or_season": "Unknown",
+        "release_date": "2020-12-04",
+        "artists": "Various Artists",
+        "tracklist": "The Cruel Angel's Thesis\nFLY ME TO THE MOON - YOKO TAKAHASHI Acid Bossa Version\nSoul's Refrain\nTHANATOS -IF I CAN'T BE YOURS-\nKOMM, SUSSER TOD - M-10 Director's Edit Version\nKYOU NO HI WA SAYOUNARA\nTSUBASA WO KUDASAI\nFLY ME TO THE MOON - 2020 Version\nKokoro yo Genshi ni Modore 2020\nMugen Houyou\nShiawase wa Tsumi no Nioi\nCome sweet death, second impact\nDilemmatic triangle opera\nThe Image of black me\nDilemmatic triangle opera - AYANAMI Version",
+        "total_tracks": 15,
+        "spotify_url": "https://open.spotify.com/album/3MRZ3T8TutKAlQK0d7mqho",
+        "created_at": "2025-12-20T15:51:56.234Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 2,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Evangelion",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273da7266038e1344839993bdcc",
+        "part_or_season": "Unknown",
+        "release_date": "2009-08-07",
+        "artists": "Behemoth",
+        "tracklist": "Daimonos\nShemhamforash\nOv Fire and the Void\nTransmigrating Beyond Realms Ov Amenti\nHe Who Breeds Pestilence\nThe Seed Ov I\nAlas, Lord Is Upon Me\nDefiling Morality Ov Black God\nLucifer",
+        "total_tracks": 9,
+        "spotify_url": "https://open.spotify.com/album/7k6KxkfxwJuUecA41Xe2QL",
+        "created_at": "2025-12-20T15:51:56.420Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 3,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "NEON GENESIS EVANGELION III (Original Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2730c14a66e27297138c08f7695",
+        "part_or_season": "Unknown",
+        "release_date": "2023-01-27",
+        "artists": "Shiro SAGISU",
+        "tracklist": "Shiawase wa Tsumi no Nioi\nMugen Houyou\nNORMAL BLOOD\nHARBINGER OF TRAGEDY\nCHILDHOOD MEMORIES, SHUT AWAY\nThose women longed for the touch of others' lips, and thus invited their kisses\nBACKGROUND MUSIC II\nBACKGROUND MUSIC III\nIN THE DEPTHS OF HUMAN HEARTS\nHOSTILITY RESTRAINED\nTHREE OF ME, ONE OF SOMEONE ELSE\nCRIME OF INNOCENCE\nTHE SORROW OF LOSING THE OBJECT OF ONE'S DEPENDENCE\nDo you love me?\nSEPARATION ANXIETY\nINTROJECTION\nDEPRESSION\nSplitting of the Breast\nINFANTILE DEPENDENCE, ADULT DEPENDENCY\nMOTHER IS THE FIRST OTHER\nTHE HEADY FEELING OF FREEDOM\nGood, or Don't Be\nB-20 il tuo sorriso",
+        "total_tracks": 23,
+        "spotify_url": "https://open.spotify.com/album/15kyXcDWyZkpcVEeuKBdUk",
+        "created_at": "2025-12-20T15:51:56.606Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 4,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "A Cruel Angel's Thesis (Neon Genesis Evangelion Theme Rework)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273c84201d7e78d4391dff6b418",
+        "part_or_season": "Unknown",
+        "release_date": "2021-02-16",
+        "artists": "Ginger Root",
+        "tracklist": "A Cruel Angel's Thesis (Neon Genesis Evangelion Theme Rework)",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/3rMaf40HV3WqpcYXn9ofU2",
+        "created_at": "2025-12-20T15:51:56.719Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 5,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Shiro SAGISU Music from \"EVANGELION 3.0\"YOU CAN (NOT)REDO.",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b27354b26107b2b819ad77e17311",
+        "part_or_season": "Unknown",
+        "release_date": "2012-11-28",
+        "artists": "Shiro SAGISU",
+        "tracklist": "Gods Message =3EM02=\nThe Ultimate Soldier=3EM05=\nDark Defender =3EM06=\nThe Anthem =3EM07=\nOut of the Dark =3EM10=\nL'Apôtre de la Lune (2 pianos) =3EM12=\nQuatre Mains (à quatre mains) =3EM16=\nQui veut faire l'ange fait la bête (piano solo) =3EM17=\nTrust =3EM19=\nL'Apôtre de la Lune (orchestre cordes) =3EM22=\nReturn to Ash =3EM23=\nIt will mean Victory =3EM24=\nBetrayal =3EM25=\nScarred and Battled =3EM26=\nFrom Beethoven 9 =3EM27=\nThe Wrath of God in All its Fury =3EM28=\nTout est Perplexe (Thème Q) =3EM30b=\nGods Gift =3EM31=\nKindred Spirits (Thème Q) =3EM30a=\nBataille d'Espace =3EM01=\nQuiproquo 131(2pianos)=3EM03=\nSerenity Amongst the Turmoil =3EM04=\nQuelconque103(piano)=3EM08=\nQuiproquo 83 (2 pianos) =3EM09=\nQuatre Mains(chambre cordes)\nQuiproquo140(piano) =3EM18=\nLong Slow Pain=3EM20=\nQuelconque 56 avec A4 (2 pianos plus) =3EM21=\nQuiproquo131(orchestre)\nQui veut faire l'ange fait la bête (piano capricieux)\nThéme Q(guitare)=3EM13=\nande-annonce (garçons)\nPeaceful Times (chœur) =3EM32=\nFamously...",
+        "total_tracks": 34,
+        "spotify_url": "https://open.spotify.com/album/78BrgzadRuj57mDpBnd2dp",
+        "created_at": "2025-12-20T15:51:56.891Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 6,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "NEON GENESIS EVANGELION II (Original Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2733d889ffa9b83f3fddfdabc00",
+        "part_or_season": "Unknown",
+        "release_date": "2023-01-27",
+        "artists": "Shiro SAGISU",
+        "tracklist": "Yokan\nThe Cruel Angel's Thesis <TV. Size Version>\nBORDERLINE CASE\nA Crystalline Night Sky\nANGEL ATTACK II\nANGEL ATTACK III\nBoth of you, Dance Like You Want to Win!\nWaking up in the morning\nBACKGROUND MUSIC\nA Moment When Tension Breaks\nThe Day Tokyo-3 Stood Still\nSpending Time in Preparation\nShe said, \"Don't make others suffer for your personal hatred.\"\nMAGMADIVER\nPLEASURE PRINCIPLE\nThe Beast II (1996)\nTHANATOS\nREI III\nWhen I Find Peace of Mind\nJikai Yokoku (F-2 15 Second Version)\nB-16 Rhythm nomi (MISATO)\nB-17 Rhythm nomi (ASUKA STRIKES)",
+        "total_tracks": 22,
+        "spotify_url": "https://open.spotify.com/album/6o1pux1ryskKRd4LX3c3AC",
+        "created_at": "2025-12-20T15:51:57.062Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 7,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "NEON GENESIS EVANGELION (Original Series Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273564b9a0c99103bf3c5e054f7",
+        "part_or_season": "Unknown",
+        "release_date": "2019-06-21",
+        "artists": "Shiro SAGISU",
+        "tracklist": "The Cruel Angel's Thesis (Director's Edit Version)\nANGEL ATTACK\nRei I\nHedgehog's Dilemma\nBAREFOOT IN THE PARK\nRITSUKO\nMISATO\nASUKA STRIKES!\nNERV\nTOKYO-3\nI. SHINJI\nEVA-01\nA STEP FORWARD INTO TERROR\nEVA-02\nDECISIVE BATTLE\nEVA-00\nTHE BEAST\nMARKING TIME, WAITING FOR DEATH\nRei II\nFLY ME TO THE MOON - Instrumental Version\nNext Episode\nFLY ME TO THE MOON - YOKO TAKAHASHI Acid Bossa Version",
+        "total_tracks": 22,
+        "spotify_url": "https://open.spotify.com/album/4vwgTxjKwiSWfEoGOqhiWa",
+        "created_at": "2025-12-20T15:51:57.197Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 8,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Shiro SAGISU Music from \"SHIN EVANGELION\" EVANGELION: 3.0+1.0.",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273210f52db7c98f5e1c0915342",
+        "part_or_season": "Unknown",
+        "release_date": "2021-08-13",
+        "artists": "Shiro SAGISU",
+        "tracklist": "paris\nif a cause is worth dying for then be\neuro nerv\ntema principale: orchestra dedicata ai maestri\nberceuse: piano\nl'homme n'est ni ange ni bete\nprettiest star\nkarma\nyearning for your love\ntema principale: piano dedicata ai maestri\nhand of fate\nunwelcome: piano\nm & r: piano\nlost in the memory\nberceuse: piano dans l'orchestre a cordes\nEM10A alterne\nEM10A alterne bis\ngekitotsu! gouten tai daimakan\ngekitotsu! gouten tai daimakan =hooked on the last train=\nmetamorphosis\nparanoia\nmirror mirror: refrain\nmirror mirror: orchestra and choir\nthis is the dream, beyond belief...\ntheme du concerto 494\npsycho\nkiller\ni'll go on loving someone else =version orchestre=\npillars of faith\nvoices in my head\nwhat if?: orchestra, choir and piano\nEM20 =wunder operation=\nthe path\nborn evil\ncitation from 'joy to the world'\npensees intimes: piano dans l'orchestre a cordes\nave verum corpus\nVoyager - Gravestone Without Date\n:||\nthe way of life\npensees intimes: piano\nunwelcome: orchestra\nm & r: suite pour piano, flute basse et orchestre\nthis is the dream\nVoyager - Gravestone Without Date =suppa duppa bossa=\nwhat if?: guitar\nhand of fate: playback\nyearning for your love: playback\nlost in the memory: playback\nla plus belle etoile",
+        "total_tracks": 54,
+        "spotify_url": "https://open.spotify.com/album/6IHkLv8IiMBV9hlfin14ok",
+        "created_at": "2025-12-20T15:51:57.535Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 9,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Shiro SAGISU Music from \"EVANGELION 2.0\" YOU CAN (NOT) ADVANCE.",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273417dfcd91721acbae2cdbc59",
+        "part_or_season": "Unknown",
+        "release_date": "2009-07-08",
+        "artists": "Shiro SAGISU",
+        "tracklist": "At The Very Beginning\nL'Agresseur\nAmbassadrice Rouge\nDes Cordes:opus1\nDestiny\nFate\nRobe des Champs\nDes Cordes:opus2\nTranquillite\nLes Betes\n今日の日はさようなら-Tribute to \"Sound of Music\"\nIn My Spirit\nKeep Your Heads Above The Mayhem\nInstabilite:Orchestre\nThe Final Decision We All Must Take\nEvanescence:mouvement 1\nEvanescence:mouvement 2\nEvanescence:mouvement 3\nCarnage\nSin From Genesis\n翼をください-Tribute to \"Sound of Music\"\nInstabilite:Piano Solo\nMellow2009",
+        "total_tracks": 23,
+        "spotify_url": "https://open.spotify.com/album/1Etq7R0V6TLzRfUXOPwAwc",
+        "created_at": "2025-12-20T15:51:57.727Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 10,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "THE END OF EVANGELION (Original Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273b53900d8b2056868839d7edd",
+        "part_or_season": "Unknown",
+        "release_date": "2023-02-15",
+        "artists": "Shiro SAGISU",
+        "tracklist": "Tanin no Kanshyou\nManatsu no Syuuen\nTaikou eno Kinkyuuhinan\nItsuwarino Saisei (M-7Bnewremix)\nMigawari no Sinnyuu\nII Air [ORCHESTRAL SUITE No.3 in D Major, BWV. 1068]\nMunashiki Nagare\nTHANATOS -IF I CAN'T BE YOURS-\nHajimari eno Touhi\nHuan to Mitsugetsu\nKOMM, SUSSER TOD - M-10 Director's Edit Version\nJesus bleibet meine Freude [Herz und Mund und Tat und Leben BWV.147] / Syuyo Hito no Nozomi no Yorokobiyo\nHeisoku no Kakudai\nYume no Sukima\nM-9 Heisoku no Kakudai\nF02 version 0706",
+        "total_tracks": 16,
+        "spotify_url": "https://open.spotify.com/album/12Zlf7jQUcYOsPl2qbuXgz",
+        "created_at": "2025-12-20T15:51:57.922Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 11,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Naruto For Sleep",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b27356492622f9ca2fd5726845d5",
+        "part_or_season": "Unknown",
+        "release_date": "2023-11-17",
+        "artists": "Slumbering Tom",
+        "tracklist": "Comet (From \"Naruto Shippuden\")\nCloser (From \"Naruto Shippuden\")\nGuren Theme (From \"Naruto Shippuden\")\nDespair (From Despair (From \"Naruto Shippuden\")\nDecision (From \"Naruto Shippuden\")\nCompanions (From \"Naruto Shippuden\")\nMy Mother And My Father (From \"Naruto Shippuden\")\nSakura's Theme (From \"Naruto Shippuden\")\nKimimaro's Demise (From \"Naruto Shippuden\")\nItachi's Theme (From \"Naruto Shippuden\")\nTenten's Theme (From \"Naruto Shippuden\")\nThe Calm Before The Storm (From \"Naruto Shippuden\")\nYoung Obito's Death Theme (From \"Naruto Shippuden\")\nSilhouette (From \"Naruto Shippuden\")\nAlive (From \"Naruto Shippuden\")\nNindo (From \"Naruto Shippuden\")\nBurial (From \"Naruto Shippuden\")\nSamidare (From \"Naruto Shippuden\")\nGentle Hands (From \"Naruto Shippuden\")\nExperienced Many Battles (From \"Naruto Shippuden\")\nSaika (From \"Naruto Shippuden\")\nScene Of A Disaster (From \"Naruto Shippuden\")\nMountain Haze (From \"Naruto Shippuden\")\nObito & Rin (From \"Naruto Shippuden\")\nMan Of The World (From \"Naruto Shippuden\")\nChildhood Memories (From \"Naruto\")\nPain's Theme (From \"Naruto Shippuden\")\nShippuden (From \"Naruto Shippuden\")\nMinato Saves Kushina (From \"Naruto Shippuden\")\nGentle Hands (From \"Naruto Shippuden\") - Piano\nThe Raising Fighting Spirit (From \"Naruto Shippuden\")\nObito's Theme (From \"Naruto Shippuden\")",
+        "total_tracks": 32,
+        "spotify_url": "https://open.spotify.com/album/19wH4ozi5NozKOdGPDVO3i",
+        "created_at": "2025-12-20T15:51:58.298Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 12,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Best Sad Songs from Naruto",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273760d81cefd2c8cade93a812c",
+        "part_or_season": "Unknown",
+        "release_date": "2012-12-07",
+        "artists": "Bird Of Pray",
+        "tracklist": "Ai to Shu - Grief and Sorrow [from Naruto]\nKodoku – Alone [from Naruto]\nAi to Hi – Sadness and Sorrow [from Naruto] - Short Version\nShitsui – Despair [from Naruto Shippuuden]\nGuren [from Naruto Shippuuden]\nUtsusemi – Man of the World [from Naruto Shippuuden]\nHakubo – Nightfall [from Naruto Shippuuden]\nSamidare [from Naruto Shippuuden]\nKodoku – Loneliness [from Naruto Shippuuden]\nAi to Shu - Grief and Sorrow [from Naruto] - Hokage's Funeral\nAi to Hi – Sadness and Sorrow [from Naruto] - Long Version\nAi to Shu - Grief and Sorrow - Hokage's Funeral [from Naruto] - Dance Remix\nAi to Hi – Sadness and Sorrow [from Naruto] - Techno Remix",
+        "total_tracks": 13,
+        "spotify_url": "https://open.spotify.com/album/4sbOSN1tcN8i0ZG1ilDvNM",
+        "created_at": "2025-12-20T15:51:58.416Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 13,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "NARUTO-ナルト- 疾風伝　オリジナル・サウンドトラック",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273d911e43123678e12f4eb2823",
+        "part_or_season": "Unknown",
+        "release_date": "2007-12-19",
+        "artists": "Yasuharu Takanashi, YAIBA",
+        "tracklist": "疾風伝\n動天\n帰郷\n千軍万馬\n電光石火\n任務\n空蝉\n出陣\n怒り\n暁\n哀鴻遍野\n人柱力\n孤独\n薄暮\n秘めたる闘志\n古今無双\n落日\n百花繚乱\n失意\n暗雲\n膠着\n悲壮\n対峙\n怪異\n乾坤一擲\n形勢逆転\n仲間\n疾風組曲",
+        "total_tracks": 28,
+        "spotify_url": "https://open.spotify.com/album/4f5CITLlnnTPE49n5Bd0zN",
+        "created_at": "2025-12-20T15:51:58.628Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 14,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Blue Bird (From \"Naruto Shippuden\")",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2732d6016235e4d0178b779afe1",
+        "part_or_season": "Unknown",
+        "release_date": "2020-12-22",
+        "artists": "Akano",
+        "tracklist": "Blue Bird (From \"Naruto Shippuden\")",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/7C41hnp5N5oQpH143Iz4rN",
+        "created_at": "2025-12-20T15:51:58.745Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 15,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "NARUTO -ナルト-　オリジナルサウンドトラック Ⅲ",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2737b3374e8abec5bc030466572",
+        "part_or_season": "Unknown",
+        "release_date": "2005-04-27",
+        "artists": "Toshio Masuda, MUSASHI PROJECT",
+        "tracklist": "美しき碧い野獣\n桜の季節\nフェイク！\n危機また危機\nロック・リーのテーマ\n舞\n究極奥義\nキメるってばよ！\n嗚呼、師弟愛\n復讐者！\n重は激\n猿飛\n火影\n哀と愁\n自来也のテーマ\n波紋\n首飾り揺れて\nブン太！\n茶ノ國\n忍びよる悪夢\n五代目の闘い！\n英雄\n火の意志を継ぐ者たち…",
+        "total_tracks": 23,
+        "spotify_url": "https://open.spotify.com/album/1HObVU42QE1DcypM59MBFS",
+        "created_at": "2025-12-20T15:51:58.960Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 16,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Wind - Naruto Ending Theme (From \"Naruto\")",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273a07a8e12bfe67dd7901ad23b",
+        "part_or_season": "Unknown",
+        "release_date": "2020-01-29",
+        "artists": "Geek Music",
+        "tracklist": "Wind - Naruto Ending Theme (From \"Naruto\")",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/27ukNwDRlAQf99DDE7VNHj",
+        "created_at": "2025-12-20T15:51:59.087Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 17,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "NARUTO -ナルト-　オリジナルサウンドトラック Ⅱ",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2738fc8a433553d6586f75d7dc1",
+        "part_or_season": "Unknown",
+        "release_date": "2004-03-10",
+        "artists": "Toshio Masuda, MUSASHI PROJECT",
+        "tracklist": "木ノ葉の昼\n対峙\n悪\nサスケのテーマ\nサバイバル試験\n木ノ葉の午後\nおふざけモード\n木ノ葉丸のテーマ\n修業だコレ！\nガイのテーマ\nヒナタvsネジ\n大蛇丸のテーマ\n復讐者\n大蛇丸～戦闘～\n雷切\nサスケ～運命～\nひとり",
+        "total_tracks": 17,
+        "spotify_url": "https://open.spotify.com/album/6dfygmKJzKiTCJJY7qpTnA",
+        "created_at": "2025-12-20T15:51:59.303Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 18,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "NARUTO-ナルト- 疾風伝　オリジナル・サウンドトラック Ⅲ",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2735b26033d465f5cbd3ca87a5e",
+        "part_or_season": "Unknown",
+        "release_date": "2016-07-06",
+        "artists": "Yasuharu Takanashi, YAIBA",
+        "tracklist": "うちはイタチ\n九尾発動\n四代目火影\n父と母\n柔らかな手\n大筒木カグヤ\nゼツのテーマ\nアシュラ・インドラ\n修羅道\n冷たき土\n粛清の女神\nうずまく熱風\n轟地に立つ\n勇ある者たち\nずっと見てた\nカカシとオビト\n友よ\n永遠に眠れ\nオビトのテーマ\n殉教者\nノスタルジア\n届かぬ人に\n風と炎の円舞曲\n道は続く\nNARUTO Main Theme'16",
+        "total_tracks": 25,
+        "spotify_url": "https://open.spotify.com/album/7DQCQeGbnpjr3tF7p3f2jA",
+        "created_at": "2025-12-20T15:51:59.495Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 19,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "NARUTO -ナルト-　オリジナルサウンドトラック",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2736d1c1a631e1b46ccc32eaee2",
+        "part_or_season": "Unknown",
+        "release_date": "2003-03-19",
+        "artists": "Toshio Masuda, MUSASHI PROJECT",
+        "tracklist": "オレがナルトだってばよ！\n九尾の妖狐\n朝\nナルトの日常\n緊張\n沸き上がる闘志\n哀と悲\n孤独\nサクラのテーマ\nカカシのテーマ\nお色気\n行け行けナルト\n夕暮れ\n膠着状態\n強にして重\n劣勢\n激と撃\n逆転\n勝利\nNARUTO Main Theme",
+        "total_tracks": 20,
+        "spotify_url": "https://open.spotify.com/album/6NrJzDuBPZvp3ZRXnIqs1P",
+        "created_at": "2025-12-20T15:51:59.678Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 20,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "NARUTO-ナルト- 疾風伝　オリジナル・サウンドトラック Ⅱ",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273f9f0edfe58bbb6e3c44e574f",
+        "part_or_season": "Unknown",
+        "release_date": "2009-12-16",
+        "artists": "Yasuharu Takanashi, YAIBA",
+        "tracklist": "昇竜\n臨界\n撃破\n彩霞\n預言者\n飛段\n角都\n紅炎\n乱髪\n埋葬\n白詰草\n漂泊\n難攻不落\n疾空\n試練\n読心術\n紅蓮\n黒点\n緋文字\n儀礼\n紅薔薇\n山霞\n千夜\n幻視\n白映\n落葉船\n鳴神\n五月雨",
+        "total_tracks": 28,
+        "spotify_url": "https://open.spotify.com/album/1GoWJc6XFiHW1ewHcY1Xqm",
+        "created_at": "2025-12-20T15:51:59.859Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 21,
+    "fields": {
+        "media_type": "ANIME",
+        "media_title": "Attack On Titan",
+        "album_title": "\"Attack on Titan\" Season 3 Original Soundtrack",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b27336c663196e968a1f8b7d6842",
+        "part_or_season": "1",
+        "release_date": "2019-08-26",
+        "artists": "Sawano Hiroyuki",
+        "tracklist": "K2-\r\nZero Eclipse\r\nSymphonicsuite (Aot) Part1-1st: 0Sk\r\nSymphonicsuite (Aot) Part1-2nd: Historia\r\nSymphonicsuite (Aot) Part1-3rd: Barrichestra\r\nSymphonicsuite (Aot) Part1-4th: 7-B@$\r\nK21\r\nAots3-3Spens / 21seki\r\nCall Your Name (Gv)\r\nSymphonicsuite (Aot) Part2-1st: Attack on Titan (Wmid)\r\nSymphonicsuite (Aot) Part2-2nd: Shingekinokyojin\r\nSymphonicsuite (Aot) Part2-3rd: Before Lights Out\r\nSymphonicsuite (Aot) Part2-4th: 2An\r\nSymphonicsuite (Aot) Part2-5th: Apple Seed\r\nSymphonicsuite (Aot) Part2-6th: Thanksat\r\nEren the Hyou - Movie Ver.\r\nBarricades - Movie Ver.\r\nAots3-Pf1\r\nT-Kt\r\nA 1 G U\r\nAots3-Pf2\r\nAots3-1000ryaku\r\nTooth-I:\r\nLen Zo 97N10 Hi Kyosetsu Mahle\r\nK21 - Instrumental\r\nZero Eclipse - Instrumental\r\nBarricades - Movie Ver. / Instrumental\r\nCall Your Name (Gv) - Instrumental\r\nAttack on Titan (Wmid) - Instrumental\r\nBefore Lights Out - Instrumental\r\nApple Seed - Instrumental",
+        "total_tracks": 31,
+        "spotify_url": "https://open.spotify.com/album/5ZT4JbMhZU7V8sDPHZhG8h",
+        "created_at": "2025-12-20T15:52:00.579Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 22,
+    "fields": {
+        "media_type": "ANIME",
+        "media_title": "Attack On Titan",
+        "album_title": "TV Anime \"Attack on Titan\" Original Soundtrack",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2732e09d63a7ba7fa7071e26524",
+        "part_or_season": "2",
+        "release_date": "2013",
+        "artists": "Sawano Hiroyuki",
+        "tracklist": "Attack on Titan\r\nThe Reluctant Heroes\r\nEye-Water\r\nRittaikidou\r\nCounter Attack-Mankind\r\nArmy-Attack\r\nVogel Im Kafig\r\nDOA\r\n凸】♀】♂】←Titan\r\nE.M.A\r\nTitan♀～9chiku\r\nBauklotze\r\n2chijou\r\nXl-Tt\r\nCall Your Name\r\nOmake-Pfadlib",
+        "total_tracks": 16,
+        "spotify_url": "https://open.spotify.com/album/3WDkuVqT1OfkTdCyYQ2gXa",
+        "created_at": "2025-12-20T15:52:00.745Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 23,
+    "fields": {
+        "media_type": "ANIME",
+        "media_title": "Attack On Titan",
+        "album_title": "TV Anime \"Attack on Titan Season 2\" (Original Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2739c44e39f1b6aafe87a6db356",
+        "part_or_season": "6",
+        "release_date": "2017-06-07",
+        "artists": "Sawano Hiroyuki",
+        "tracklist": "Barricades\r\nApetitan\r\nYou See Big Girl / T:T\r\nSon 2 Sea Ver\r\nCall of Silence\r\nEren Zahyo\r\nAttack on D\r\nYamanaiame\r\n2 Volt\r\nShingeki St - Hrn- Egt 20130629 Kyojin\r\nSo Ist Es Immer\r\nShingeki St - Hrn - Gt - Pf 20130629 Kyojin\r\nYmniam - Orch\r\nThe Reluctant Heroes (Modv)\r\nShingeki St - Hrn - Gt 20130629 Kyojin\r\nThe Dogs\r\nShingeki Pf - Medley 20130629 Kyojin\r\nEmaymniam\r\nShingeki Pf 20130218 Kyojin\r\nShingeki Gt 20130218 Kyojin\r\nTwo - Lives\r\nShingeki St 20130629 Kyojin\r\nShingeki Vn - Pf 20130524 Kyojin\r\nYmniam - Mkorch\r\nShingeki Pf - Adlib - C 20130218 Kyojin\r\nShingeki Pf - Adlib - B 20130218 Kyojin\r\nShingeki Vc - Pf 20130218 Kyojin\r\nThe Weight of Lives\r\nYamanaiame (Fmv)\r\nAots2m #1\r\nAots2m #2\r\nAots2m #3\r\nAots2m #4",
+        "total_tracks": 33,
+        "spotify_url": "https://open.spotify.com/album/0jNwqmKIwudqqbMJRRtzQb",
+        "created_at": "2025-12-20T15:52:00.937Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 24,
+    "fields": {
+        "media_type": "ANIME",
+        "media_title": "Attack On Titan",
+        "album_title": "My War (From \"Attack on Titan\")",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b27372d5adcdef5c335651d067aa",
+        "part_or_season": "Unknown",
+        "release_date": "2020-12-30",
+        "artists": "Miura Jam",
+        "tracklist": "My War (From \"Attack on Titan\")",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/3ongPyO4cZbaYXcpVaJzMO",
+        "created_at": "2025-12-20T15:52:01.055Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 25,
+    "fields": {
+        "media_type": "ANIME",
+        "media_title": "Attack On Titan",
+        "album_title": "Epica vs. Attack on Titan Songs",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2730cca043a845cf671adcab58b",
+        "part_or_season": "7",
+        "release_date": "2018-07-20",
+        "artists": "Epica",
+        "tracklist": "Crimson Bow and Arrow\r\nWings of Freedom\r\nIf Inside These Walls Was a House\r\nDedicate Your Heart!\r\nCrimson Bow and Arrow - Instrumental\r\nWings of Freedom - Instrumental\r\nIf Inside These Walls Was a House - Instrumental\r\nDedicate Your Heart! - Instrumental",
+        "total_tracks": 8,
+        "spotify_url": "https://open.spotify.com/album/56nnXtBQCyeSTWpVkjDQM3",
+        "created_at": "2025-12-20T15:52:01.188Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 26,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Shinzou Wo Sasageyo (Attack on Titan)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273f957a4b3df0344dd0e1aeb6f",
+        "part_or_season": "Unknown",
+        "release_date": "2017-05-19",
+        "artists": "NateWantsToBattle",
+        "tracklist": "Shinzou Wo Sasageyo (Attack on Titan)",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/3ng95xtVQb1hJOH3vFiW9I",
+        "created_at": "2025-12-20T15:52:01.317Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 27,
+    "fields": {
+        "media_type": "ANIME",
+        "media_title": "Attack On Titan",
+        "album_title": "TV Anime \"Attack on Titan The Final Season\" Original Sound Track Complete Album",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2739d5eb312fb990f0527e451da",
+        "part_or_season": "4",
+        "release_date": "2024-07-17",
+        "artists": "KOHTA YAMAMOTO, Sawano Hiroyuki",
+        "tracklist": "Ashes on The Fire\r\nThe Other Side of the Sea\r\nSplinter Wolf\r\nNightmare\r\nGuilty Hero\r\nThe Successor\r\nMemory Lane\r\nLiberio at Night\r\nLiberio Festival\r\nTrue History\r\nThe Warriors\r\nThe Fall of Marley\r\nZeek's Plan\r\nCold Light\r\nNowhere to go\r\nAOTF-s1\r\nAOTF-s2\r\nAOTF-s3\r\nFootsteps of Doom\r\nInto the Night - Acoustic ver.\r\nAshes on The Fire - PTV\r\nMAN-Child\r\nAll of The Freedoms\r\nTRAITOR\r\nNight of The End\r\nFrom You, 2,000 Years Ago\r\nThe Global Allied Fleet\r\nMICHI\r\nTHAW\r\nInto the Night\r\nEren\r\nYouSee-Power\r\nattack ON taitan - TFSv\r\nAn Ordinary Day\r\nAim of the Fate\r\nLiar\r\nattack till we are Ashes\r\nVanishment\r\nThe Reason\r\nFriendships\r\nMemory Lane - Vln ver.\r\nLiberio at Night - Pf&Vln ver.\r\nAtonement",
+        "total_tracks": 43,
+        "spotify_url": "https://open.spotify.com/album/5qi9RDOs1DBNHsNNBM6gjA",
+        "created_at": "2025-12-20T15:52:01.516Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 28,
+    "fields": {
+        "media_type": "ANIME",
+        "media_title": "Attack On Titan",
+        "album_title": "Attack On Titan The Final Season Original Soundtrack 02",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273e6f7f9dd98d526830a50e59b",
+        "part_or_season": "3",
+        "release_date": "2022-06-22",
+        "artists": "KOHTA YAMAMOTO, Sawano Hiroyuki",
+        "tracklist": "Footsteps of Doom\r\nInto the Night - Acoustic ver.\r\nAshes on The Fire -PTV-\r\nMAN-Child\r\nAll of The Freedoms\r\nTRAITOR\r\nNight of The End\r\nFrom You, 2,000 Years Ago\r\nThe Global Allied Fleet\r\nMICHI\r\nTHAW\r\nInto the Night\r\nELO\r\nYouSee-Power\r\nattack ON taian [TFSv]",
+        "total_tracks": 15,
+        "spotify_url": "https://open.spotify.com/album/6ZhZFePX82sWsRzKMdaprL",
+        "created_at": "2025-12-20T15:52:01.763Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 29,
+    "fields": {
+        "media_type": "ANIME",
+        "media_title": "Attack On Titan",
+        "album_title": "Attack on Titan The Final Season Original Soundtrack",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2731ab362964a8865eace979a39",
+        "part_or_season": "5",
+        "release_date": "2021-06-23",
+        "artists": "Kohta Yamamoto and Hiroyuki Sawano",
+        "tracklist": "Ashes on The Fire\r\nThe Other Side of the Sea\r\nSplinter Wolf\r\nNightmare\r\nGuilty Hero\r\nThe Successor\r\nMemory Lane\r\nLiberio at Night\r\nLiberio Festival\r\nTrue History\r\nThe Warriors\r\nThe Fall of Marley\r\nZeek's Plan\r\nNowhere to go\r\nAtonement\r\nCold Light\r\nThe Reason\r\nFriendships\r\nMemory Lane - Vln ver.\r\nLiberio at Night - Pf&Vln ver.\r\nAOTF-s1\r\nAOTF-s2\r\nAOTF-s3",
+        "total_tracks": 23,
+        "spotify_url": "https://open.spotify.com/album/6hpEJjz25G99vP0DgMgqqi",
+        "created_at": "2025-12-20T15:52:01.988Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 30,
+    "fields": {
+        "media_type": "ANIME",
+        "media_title": "Attack On Titan",
+        "album_title": "Ashes on The Fire (Attack on Titan The Final Season Original Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273c2bcff5fed95d5325eec7f91",
+        "part_or_season": "1",
+        "release_date": "2021-02-01",
+        "artists": "KOHTA YAMAMOTO",
+        "tracklist": "Ashes on The Fire (Attack on Titan The Final Season Original Soundtrack)",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/2D75BWyFdglxuY29CGfF4i",
+        "created_at": "2025-12-20T15:52:02.162Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 31,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Dune (Original Motion Picture Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b27349fb09eb93f76a5805b8f485",
+        "part_or_season": "Unknown",
+        "release_date": "2021-09-17",
+        "artists": "Hans Zimmer",
+        "tracklist": "Dream of Arrakis\nHerald of the Change\nBene Gesserit\nGom Jabbar\nThe One\nLeaving Caladan\nArrakeen\nRipples in the Sand\nVisions of Chani\nNight on Arrakis\nArmada\nBurning Palms\nStranded\nBlood for Blood\nThe Fall\nHoly War\nSanctuary\nPremonition\nOrnithopter\nSandstorm\nStillsuits\nMy Road Leads into the Desert",
+        "total_tracks": 22,
+        "spotify_url": "https://open.spotify.com/album/56k8ay5oE5apR61WIeE4wQ",
+        "created_at": "2025-12-20T15:52:02.737Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 32,
+    "fields": {
+        "media_type": "MOVIE",
+        "media_title": "DUNE",
+        "album_title": "Dune: Part Two (Original Motion Picture Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273166adc280da684b1d54f4126",
+        "part_or_season": "2",
+        "release_date": "2024-02-23",
+        "artists": "Hans Zimmer",
+        "tracklist": "Beginnings Are Such Delicate Times\r\nEclipse\r\nThe Sietch\r\nWater of Life\r\nA Time of Quiet Between the Storms\r\nHarvester Attack\r\nWorm Ride\r\nOrnithopter Attack\r\nEach Man Is a Little War\r\nHarkonnen Arena\r\nSpice\r\nSeduction\r\nNever Lose Me\r\nTravel South\r\nPaul Drinks\r\nResurrection\r\nArrival\r\nSouthern Messiah\r\nThe Emperor\r\nWorm Army\r\nGurney Battle\r\nYou Fought Well\r\nKiss the Ring\r\nOnly I Will Remain\r\nLisan al Gaib",
+        "total_tracks": 25,
+        "spotify_url": "https://open.spotify.com/album/1PeYjDmxcRNvxLd5mGHuCC",
+        "created_at": "2025-12-20T15:52:03.029Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 33,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Dune Days",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273c0e19ae45c7ec2bd3a62bf69",
+        "part_or_season": "Unknown",
+        "release_date": "2023-09-07",
+        "artists": "Lawrence Walther, Recalibration Machine, Less Gravity",
+        "tracklist": "Atmosphere\nEmotions\nSand Cottage\nHourglass\nSoft Spot",
+        "total_tracks": 5,
+        "spotify_url": "https://open.spotify.com/album/7jvCyA9lwTTbZWiuscFtyk",
+        "created_at": "2025-12-20T15:52:03.199Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 34,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Dune",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2734994c677f8c6369894ba6686",
+        "part_or_season": "Unknown",
+        "release_date": "2024-04-12",
+        "artists": "Lvst",
+        "tracklist": "Dune",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/0YveXaZSQ1niQlMmUa7xtN",
+        "created_at": "2025-12-20T15:52:03.654Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 35,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Dunes",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273a500281b02bbeb51295d5a94",
+        "part_or_season": "Unknown",
+        "release_date": "2023-05-19",
+        "artists": "southstar",
+        "tracklist": "Luna\nLe soleil\nDune\nLove Express\nTypa Girl",
+        "total_tracks": 5,
+        "spotify_url": "https://open.spotify.com/album/5OraR3Y7Ccd990r66pBWUB",
+        "created_at": "2025-12-20T15:52:04.026Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 36,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Prélude d'une nuit d'automne",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2731abd672f2be25e33261b473b",
+        "part_or_season": "Unknown",
+        "release_date": "2022-10-07",
+        "artists": "Adrien de la Salle",
+        "tracklist": "Prélude d'une nuit d'automne",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/3L0asUoUkDBJnLv4jDWh6i",
+        "created_at": "2025-12-20T15:52:04.202Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 37,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Spirit Dunes Afro-Arabian Rituals",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273d34edba696a5a2bf7577ae42",
+        "part_or_season": "Unknown",
+        "release_date": "2025-09-27",
+        "artists": "ANO LI",
+        "tracklist": "Asha Mirage\nAshara\nKahel Ritual\nKhalari Nights\nLumina Tribe\nNdoro Eclipse\nOba Drums\nOrixa Temple\nShira Waves\nZyra Chant",
+        "total_tracks": 10,
+        "spotify_url": "https://open.spotify.com/album/4KqREtmWnvZ7d5oBjCqnFL",
+        "created_at": "2025-12-20T15:52:04.352Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 38,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "The Dune Sketchbook (Music from the Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2734a9cb923dba2bba347ddb365",
+        "part_or_season": "Unknown",
+        "release_date": "2021-09-03",
+        "artists": "Hans Zimmer",
+        "tracklist": "Song of the Sisters\nI See You in My Dreams\nHouse Atreides\nThe Shortening of the Way\nPaul's Dream\nMoon over Caladan\nShai-hulud\nMind-killer\nGrains of Sand",
+        "total_tracks": 9,
+        "spotify_url": "https://open.spotify.com/album/78uSUydG2FbcVDDFWGMQjT",
+        "created_at": "2025-12-20T15:52:04.510Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 39,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Ice On The Dune",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273cf06b7a58c6bf3e90102bf05",
+        "part_or_season": "Unknown",
+        "release_date": "2013-01-01",
+        "artists": "Empire Of The Sun",
+        "tracklist": "Lux\nDNA\nAlive\nConcert Pitch\nIce On The Dune\nAwakening\nI’ll Be Around\nOld Flavours\nCelebrate\nSurround Sound\nDisarm\nKeep A Watch",
+        "total_tracks": 12,
+        "spotify_url": "https://open.spotify.com/album/4phgwA30YOM1BAhJEm96Al",
+        "created_at": "2025-12-20T15:52:04.663Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 40,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Genshin Impact - The Unfathomable Sand Dunes (Original Game Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b27300ed07c6e62b317ddeea973f",
+        "part_or_season": "Unknown",
+        "release_date": "2023-04-19",
+        "artists": "HOYO-MiX",
+        "tracklist": "Sorush's Purity\nResonance of Khvarena\nMaidens of Sanctity\nThe Caress of Three Mothers\nWhere Simurgh Rests\nFantasy of Ten Thousand Blossoms\nDirge of Newborn Life\nUndisturbed Tranquility\nMirage of the Oasis\nLonesome Road\nGrief of the Lost\nDividing Paths\nDawnlight Over Dunes\nDance of Scorpions\nGolden Crescent\nA Pearl Amongst Legends\nHymn of Cicadas\nSimurgh's Dream\nTaabak Laylatak\nResting Rogues\nPerilous Hollow\nOmen of Desolation\nSolitary Breach\nGhastly Badlands\nShadow in Ruins\nAbominable Bog\nWhere Vermin Crawl\nWhere Dreams Putrify\nPairidaeza\nHer Wishes\nOracle of the Void\nOnce-Joyful Dream\nKingdom of Dust\nEmpire of Sand\nSpice Road\nRealms of Amnesia\nGilded Journey\nOcean of Grains\nDesert Lullaby\nThe Crescent Moon's Waning\nMemories of Gurabad\nLo, There Do I See The Falcon\nWhere She Will Return\nThose Who Dream No Dreams\nThe Temple Conquered by Death\nLamenting Torrent of Oblivion\nDebris of the Beloved\nVermin Nest\nGurabad's Whisper\nBuried Mysteries",
+        "total_tracks": 108,
+        "spotify_url": "https://open.spotify.com/album/4JMjkt32NZ9VnPj68Mz7Ra",
+        "created_at": "2025-12-20T15:52:04.934Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 41,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Doom: The Dark Ages (Original Game Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2734f01ee10cef4a74c01766f49",
+        "part_or_season": "Unknown",
+        "release_date": "2025-05-14",
+        "artists": "Finishing Move Inc.",
+        "tracklist": "Invasion\nFrom the Ashes\nWhen the Shadows First Lengthened\nUnchained Predator\nHebeth\nAtlan Battleground\nSentinel Barracks\nHoly City\nBlood Red\nLast Bastion\nUnholy Siege\nPursuit of Demons\nUnyielding\nInfernal Chasm\nHellspawn Rift\nTitanic Prison\nAncestral Beast\nTransdimensional\nCosmic Sea\nInto the Void\nWhat Lies Below\nBattle on the Blackened Tide\nSteel Beyond the Grave\nRebirth\nDivine Retribution\nWither and Writhe\nRebuild\nColossus Unleashed\nOnslaught of the Damned\nTheomachy\nBlood Spill\nThe Prince\nBetween Hex and Flame\nApotheosis\nHe Is out There",
+        "total_tracks": 35,
+        "spotify_url": "https://open.spotify.com/album/1mL4QfAwy3gFEjtGPHMG3F",
+        "created_at": "2025-12-20T15:52:05.516Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 42,
+    "fields": {
+        "media_type": "GAME",
+        "media_title": "DOOM",
+        "album_title": "Doom (Original Game Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273aad36b64a1a78951b504bc4e",
+        "part_or_season": "1",
+        "release_date": "2016-09-28",
+        "artists": "Mick Gordon",
+        "tracklist": "I. Dogma\r\nRip & Tear\r\nAt Doom's Gate\r\nRust, Dust & Guts\r\nII. Demigod\r\nHellwalker\r\nAuthorization; Olivia Pierce\r\nFlesh & Metal\r\nImpure Spectrum\r\nTies That Bind\r\nBfg Division\r\nResidual\r\nArgent Energy\r\nHarbinger\r\nBiowaves\r\nOlivia's Doom (Chad Mossholder Remix)\r\nTransistor Fist\r\nDr. Samuel Hayden\r\nCyberdemon\r\nIncantation\r\nIII. Dakhma\r\nDamnation\r\nThe Stench\r\nUac Report File; Shto36u3\r\nDeath & Exhale\r\nSkullHacker\r\nLazarus Waves\r\nVega Core\r\n6_idkill.Vega.Cih\r\nMastermind\r\nIV. Doom",
+        "total_tracks": 31,
+        "spotify_url": "https://open.spotify.com/album/0KQyC28P9808r0oKKNgHvp",
+        "created_at": "2025-12-20T15:52:05.755Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 43,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "doom",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2735a1f723b6e58219f5a0edfe4",
+        "part_or_season": "Unknown",
+        "release_date": "2022-02-17",
+        "artists": "zavet",
+        "tracklist": "DOOM\nJEFF HARDY\nУ ТЕБЯ СТРЕМНАЯ ТЕЛКА",
+        "total_tracks": 3,
+        "spotify_url": "https://open.spotify.com/album/6WoCXFw7SOVsAl4xV43NIU",
+        "created_at": "2025-12-20T15:52:05.922Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 44,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Circus Of Doom",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273bcfd448bffc92c65938553b4",
+        "part_or_season": "Unknown",
+        "release_date": "2022-04-29",
+        "artists": "Battle Beast",
+        "tracklist": "Circus of Doom\nWings of Light\nMaster of Illusion\nWhere Angels Fear to Fly\nEye of the Storm\nRussian Roulette\nFreedom\nThe Road to Avalon\nArmageddon\nPlace That We Call Home\nThe Lightbringer\nTempest Of Blades",
+        "total_tracks": 12,
+        "spotify_url": "https://open.spotify.com/album/6Kuz73jchZKPe72PPi2s3C",
+        "created_at": "2025-12-20T15:52:06.125Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 45,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "DOOM FUNK",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2733b6ea915a75bd2f6b2eb63d6",
+        "part_or_season": "Unknown",
+        "release_date": "2025-12-12",
+        "artists": "TEENWXVE",
+        "tracklist": "DOOM FUNK\nDOOM FUNK - Slowed\nDOOM FUNK - Ultra Slowed\nDOOM FUNK - Sped Up",
+        "total_tracks": 4,
+        "spotify_url": "https://open.spotify.com/album/77vXvx346VTuKBfA5dYQ1y",
+        "created_at": "2025-12-20T15:52:06.318Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 46,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Operation: Doomsday (Complete)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2736ce90ec627a0198a8efd127f",
+        "part_or_season": "Unknown",
+        "release_date": "1999-10-19",
+        "artists": "MF DOOM",
+        "tracklist": "The Time We Faced Doom (Skit)\nDoomsday\nRhymes Like Dimes\nThe Finest\nBack in the Days (Skit)\nGo With the Flow\nTick, Tick...\nRed and Gold\nThe Hands of Doom (Skit)\nWho You Think I Am?\nDoom, Are You Awake? (Skit)\nHey!\nOperation: Greenbacks\nThe Mic\nThe Mystery of Doom (Skit)\nDead Bent\nGas Drawls\n?\nHero v.s. Villain (Epilogue)\nDead Bent - 12\" Version\nGas Drawls - 12\" Version\nHey - 12\" Version\nGreenbacks - 12\" Version\nGo With the Flow - 12\" Version\nGo With the Flow - Raw Rhymes\nI Hear Voices Pt. 1 - 12\" Version\nI Hear Voices Pt. 2 - 12\" Version\nTick, Tock - 12\" Version\n? - Extended Raw Rhymes Version\nDead Bent - 12\" Instrumental Version\nGas Drawls - 12\" Instrumental Version\nHey! - 12\" Instrumental Version\nGreenbacks - 12\" Instrumental Version\nThe Mic - 12\" Instrumental Version\nRed and Gold - 12\" Instrumental Version\nI Hear Voices - 12\" Instrumental Version\nDoomsday - Instrumental\nRhymes Like Dimes - Instrumental\nThe Finest - Instrumental\nThe Hands of Doom - Instrumental\nWho You Think I Am - Instrumental\n? - Instrumental",
+        "total_tracks": 42,
+        "spotify_url": "https://open.spotify.com/album/5bjUbZPVTEQcb6W3LquX1E",
+        "created_at": "2025-12-20T15:52:06.552Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 47,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Venus Doom (Deluxe Version)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273e03b4f7e970c5675a6179138",
+        "part_or_season": "Unknown",
+        "release_date": "2007-09-07",
+        "artists": "HIM",
+        "tracklist": "Venus Doom\nLove in Cold Blood\nPassion's Killing Floor\nThe Kiss of Dawn\nSleepwalking Past Hope\nDead Lovers' Lane\nSong or Suicide\nBleed Well\nCyanide Sun\nKilling Loneliness - Live\nWings of a Butterfly - Live",
+        "total_tracks": 11,
+        "spotify_url": "https://open.spotify.com/album/4dTGZjSM9J5rVcJbPITNLq",
+        "created_at": "2025-12-20T15:52:06.712Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 48,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Doomsday",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273a6c7b940a166ac0dce26672c",
+        "part_or_season": "Unknown",
+        "release_date": "2016-10-03",
+        "artists": "Timur Mutsurayev",
+        "tracklist": "No Turning Back\nExtinguished Candle\nLife is Vanity\nGunib\nWind\nLife Path\nIerusalim\nGiven The Vast\nI Go\nDoomsday\nAnthem\nThe Islamic Ummah\nSolomon\nNever Be Downhearted",
+        "total_tracks": 14,
+        "spotify_url": "https://open.spotify.com/album/0WP0myTTTajL9z1gOcwu4t",
+        "created_at": "2025-12-20T15:52:07.006Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 49,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "ALL IS BEAUTIFUL… BECAUSE WE'RE DOOMED",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2730496a68266b92e90d8cd623e",
+        "part_or_season": "Unknown",
+        "release_date": "2025-08-22",
+        "artists": "We Came As Romans",
+        "tracklist": "ALL IS BEAUTIFUL...\nbad luck\nlake of fire\nred smoke\none by one\nculture wound\nwhere did you go?\nno rest for the dreamer\nb2tm\ncircling a dying sun\nknowing pain\nso lost (burning flowers)\nBECAUSE WE'RE DOOMED",
+        "total_tracks": 13,
+        "spotify_url": "https://open.spotify.com/album/42KPmh26BJtkXWEQqsfIQ3",
+        "created_at": "2025-12-20T15:52:07.273Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 50,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Doom's Embrace",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2732fb333867284ea48aee670f8",
+        "part_or_season": "Unknown",
+        "release_date": "2025-12-20",
+        "artists": "Happy Birthday",
+        "tracklist": "Doom's Embrace",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/03g6Y2um52cRveH8ficA9J",
+        "created_at": "2025-12-20T15:52:07.421Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 51,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Stranger Things",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2731993bab532b897dea1633efe",
+        "part_or_season": "Unknown",
+        "release_date": "2025-12-20",
+        "artists": "VMZ",
+        "tracklist": "Stranger Things",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/6sdNrAS51yIjiP1TGQHkKs",
+        "created_at": "2025-12-20T15:52:07.801Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 52,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Stranger Things 2 (Soundtrack from the Netflix Original Series)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273483c2fc141fcb4efe4470fb7",
+        "part_or_season": "Unknown",
+        "release_date": "2017-10-20",
+        "artists": "Kyle Dixon & Michael Stein",
+        "tracklist": "Walkin in Hawkins\nHome\nEulogy\nOn the Bus\nPresumptuous\nEight Fifteen\nThe First Lie\nScars\nI Can Save Them\nDescent into the Rift\nChicago\nLooking for a Way Out\nBirth / Rescue\nIn the Woods\nDigging\nSymptoms\nEggo in the Snow\nSoldiers\nChoices\nNever Tell\nShe Wants Me to Find Her\nShouldn't Have Lied\nIt's a Trap\nCrib\nThe Return\nEscape\nWe Go out Tonight\nConnect the Dots\nThe Hub\nOn Edge\nWhat Else Did You See?\nRun\nLevitation\nTo Be Continued",
+        "total_tracks": 34,
+        "spotify_url": "https://open.spotify.com/album/2l0rdHb97fQidl9dsOxE6B",
+        "created_at": "2025-12-20T15:52:08.024Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 53,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Stranger Things, Vol. 1 (A Netflix Original Series Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2733fbdbf37626f8bee2abe8a39",
+        "part_or_season": "Unknown",
+        "release_date": "2016-08-12",
+        "artists": "Kyle Dixon & Michael Stein",
+        "tracklist": "Stranger Things\nKids\nNancy and Barb\nThis Isn't You\nLay-Z-Boy\nFriendship\nEleven\nA Kiss\nCastle Byers\nHawkins\nThe Upside Down\nAfter Sarah\nOne Blink for Yes\nPhotos in the Woods\nFresh Blood\nLamps\nHallucinations\nHanging Lights\nBiking to School\nAre You Sure?\nAgents\nPapa\nCops Are Good at Finding\nNo Weapons\nWalking Through the Upside Down\nShe'll Kill You\nRun Away\nNo Autopsy\nDispatch\nJoyce and Lonnie Fighting\nLights Out\nHazmat Suits\nTheoretically\nYou Can Talk to Me\nWhat Else Is There to Do?\nHawkins Lab",
+        "total_tracks": 36,
+        "spotify_url": "https://open.spotify.com/album/1puplOrvmUGoq2VxsB0ENJ",
+        "created_at": "2025-12-20T15:52:08.237Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 54,
+    "fields": {
+        "media_type": "SERIES",
+        "media_title": "Stranger Things",
+        "album_title": "Stranger Things: Soundtrack from the Netflix Series, Season 4",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2739456740ce4c5a93003341286",
+        "part_or_season": "4",
+        "release_date": "2022-07-01",
+        "artists": "Various Artists",
+        "tracklist": "Separate Ways (Worlds Apart) - Bryce Miller/Alloy Tracks Remix\r\nCalifornia Dreamin'\r\nPsycho Killer\r\nRunning Up That Hill (A Deal with God)\r\nYou Spin Me Round (Like a Record)\r\nChica Mejicanita\r\nPlay With Me\r\nDetroit Rock City - Single Version\r\nI Was A Teenage Werewolf\r\nPass the Dutchie\r\nWipe Out\r\nObject Of My Desire - Single Version\r\nRock Me Amadeus - Full Length Gold Mix\r\nTravelin' Man\r\nTarzan Boy\r\nDream a Little Dream of Me\r\nRock and Roll, Hoochie Koo - Single Version\r\nFire and Rain\r\nSpellbound\r\nMaster of Puppets\r\nWhen It's Cold I'd Like To Die\r\nSeparate Ways (Worlds Apart) - Steve Perry & Bryce Miller Extended Remix",
+        "total_tracks": 22,
+        "spotify_url": "https://open.spotify.com/album/3Tij2oa4FJWd7Gk0pJaf0w",
+        "created_at": "2025-12-20T15:52:08.485Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 55,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Stranger Things 3 (Original Score from the Netflix Original Series)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b2738ad6d28ba7a9fe033fe23cb8",
+        "part_or_season": "Unknown",
+        "release_date": "2019-06-28",
+        "artists": "Kyle Dixon & Michael Stein",
+        "tracklist": "Boys and Girls\nI Like Presents Too\nStarcourt\nBlank Makes You Crazy\nI Need You to Trust Me\nYou're a Fighter\nThe Ceiling Is Beautiful\nThe First I love You\nRats\nWhat Did You Do To Him?\nFind the Source\nThe Silver Cat Feeds\nHeather's\nWilliam\nDestroying the Castle\nIn the Void\nTammy\nMirkwood\nPortal Drill\nHappy Screams\nRuins\nIt's Just Ice\nThe Door Is Opening\nPlanck's Constant\nShe's Gone Home\nSeven Feet\nThe Week Is Long\nSauna Test\nSix Facts\nThe Trees Are Moving\nOn Their Tracks\nNot Chinese Food\nBlueprints\nLand Deeds\nNot Kids Anymore\nCode Red\nFeel Safe\nHe’s Here\nScoops Troop\nWe Don't Understand Each Other\nAftermath",
+        "total_tracks": 41,
+        "spotify_url": "https://open.spotify.com/album/3qjUxwtbMHsiO0U20ezOjR",
+        "created_at": "2025-12-20T15:52:08.747Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 56,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Stranger Things: Soundtrack from the Netflix Original Series, Season 3",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273de95344a3bafbaed194ea4be",
+        "part_or_season": "Unknown",
+        "release_date": "2019-07-05",
+        "artists": "Various Artists",
+        "tracklist": "Baba O'Riley - ConfidentialMX Remix\nThings Can Only Get Better\nMaterial Girl\nCold as Ice\nShe's Got You\nR.O.C.K. In the U.S.A. (A Salute to 60's Rock)\nNeutron Dance\nCan't Fight This Feeling\nWake Me Up Before You Go-Go\nMy Bologna\nMoving In Stereo\nNever Surrender\nLovergirl - Single Version\nWorkin' for a Livin'\nWe'll Meet Again\nNever Ending Story",
+        "total_tracks": 16,
+        "spotify_url": "https://open.spotify.com/album/7oiDQdZ810FzweT2fm3tAP",
+        "created_at": "2025-12-20T15:52:09.049Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 57,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Stranger Things 4 (Original Score From The Netflix Series)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273acf5221c4faab1c7d2a8c792",
+        "part_or_season": "Unknown",
+        "release_date": "2022-07-01",
+        "artists": "Kyle Dixon & Michael Stein",
+        "tracklist": "What's the Internet?\nI wouldn’t remember me either.\nTeens\nJournalistic Instinct\n100% Convinced\nIn the closet (at Rink O Mania)\nDoes that make us friends?\nMy BOOBS Hurt.\nUnambiguous True Love\nStuck in 1983\nHawkins National Lab\nHellfire Club\nBuried Memories\nFancy Bomb\nWe are NOT Heroes\nNine Feet Tall\nHail Lord Vecna\nPowerful Psychic Connection\nRuth, Nevada\nHellfire Isn’t A Cult\nI Know What I Saw\nCurfew\nYou’re Regressing Eleven\nLetter to Willy\nPalm Tree Delight\nMusso\nBrenner’s Little Pet\nMr. Fibbly\nIt’s just a clock, right?\nWelcome to Kamchatka\nA Nightmare Far Worse\nCaught a Body at the Munsen Trailer\nA War is coming to Hawkins\nThe Elephant\nHurtling Towards a Gruesome Death\nBarefoot in the snow\nKills you in your dreams\nThe Shire is Burning\nBlood Balloons\nBurning Baby\nMugshot\nThere are some things worse than ghosts...\nA memory within a memory\nA Proper Thump\nHiiiiiiiii\nStill Dizzy\nReign Fire From Above\nReligious American\nSurf that Tasty Pie\nFollow me into Death",
+        "total_tracks": 80,
+        "spotify_url": "https://open.spotify.com/album/5qRG8S2ClNtl71wEf2TKPp",
+        "created_at": "2025-12-20T15:52:09.302Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 58,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Funk Stranger Things",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273c177061440a36b12447b2842",
+        "part_or_season": "Unknown",
+        "release_date": "2025-12-08",
+        "artists": "Mc Delux, MC Donzela, DJ Cris Fontedofunk",
+        "tracklist": "Funk Stranger Things",
+        "total_tracks": 1,
+        "spotify_url": "https://open.spotify.com/album/4u8lkyhvotvvgDeLeB7ZyY",
+        "created_at": "2025-12-20T15:52:09.451Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 59,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Stranger Things, Vol. 2 (A Netflix Original Series Soundtrack)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273c2c2b3721ed236205f5394e3",
+        "part_or_season": "Unknown",
+        "release_date": "2016-08-19",
+        "artists": "Kyle Dixon & Michael Stein",
+        "tracklist": "Hopper Sneaks In\nI Know What I Saw\nRolling out the Pool\nOver\nGearing Up\nFlickering\nFirst Kiss\nCrying\nWalking Down the Tracks\nWhere's Barb?\nSpeak of the Devil\nDanger Danger\nTribulations\nFlashback\nKids Two\nTalking to Australia\nNight of the Seventh\nSee Any Rain?\nCoffee & Contemplation\nInside the Black Room\nStarts to Rain\nEleven Is Gone\nTime for a 187\nSomething in the House\nStill Pretty\nAbilities\nTendril\nThey Found Us\nBad Men\nSpiked Bat\nMaking Contact\nWhat Do You Know?\nIt's Not My Boy\nSomething in the Wall\nLet's Go\nLeap of Faith\nIn Pursuit\nBreaking and Entering\nStranger Things - Extended",
+        "total_tracks": 39,
+        "spotify_url": "https://open.spotify.com/album/5d1hWmBYkAkVAE9XG5njrz",
+        "created_at": "2025-12-20T15:52:09.626Z"
+    }
+},
+{
+    "model": "frisson_music.album",
+    "pk": 60,
+    "fields": {
+        "media_type": "",
+        "media_title": "",
+        "album_title": "Stranger Things (Soundtrack from the Netflix Original Series)",
+        "cover_image_url": "https://i.scdn.co/image/ab67616d0000b273bd0db295c0164ddbc0584ebb",
+        "part_or_season": "Unknown",
+        "release_date": "2017-10-27",
+        "artists": "Various Artists",
+        "tracklist": "INTRO - Will Singing the Clash\nEvery Breath You Take\nShould I Stay or Should I Go - Remastered\n'Coffee and contemplation'\nHazy Shade of Winter\nNocturnal Me\n'Bring him home!'\nSunglasses at Night\nGirls On Film\n'Just because people tell you...'\nAtmosphere\n'Maybe I'm crazy...'\nTwist of Fate\n'Says logic'\nThe Ghost in You\nAfrica\nYou Don't Mess Around With Jim\n'Accident or not'\nWhip It\nRunaway\nTime After Time\nTalking In Your Sleep\n'Mouthbreather'\nBack to Nature\n'She's our friend and she's crazy!'\nRock You Like a Hurricane - 2011\nHeroes\n'Friends don't lie'\nElegia\nOUTRO - Will Singing the Clash",
+        "total_tracks": 30,
+        "spotify_url": "https://open.spotify.com/album/0CTCk1eshEadFqZ4NBfe9N",
+        "created_at": "2025-12-20T15:52:09.775Z"
+    }
+},
+{
+    "model": "frisson_music.rating",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "album": 32,
+        "score": 3,
+        "created_at": "2025-12-21T10:51:34.880Z"
+    }
+},
+{
+    "model": "frisson_music.rating",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "album": 32,
+        "score": 4,
+        "created_at": "2025-12-21T11:12:00.477Z"
+    }
+},
+{
+    "model": "frisson_music.rating",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "album": 54,
+        "score": 5,
+        "created_at": "2025-12-21T11:55:22.099Z"
+    }
+},
+{
+    "model": "frisson_music.rating",
+    "pk": 4,
+    "fields": {
+        "user": 2,
+        "album": 28,
+        "score": 2,
+        "created_at": "2025-12-21T20:26:37.233Z"
+    }
+},
+{
+    "model": "frisson_music.rating",
+    "pk": 5,
+    "fields": {
+        "user": 2,
+        "album": 27,
+        "score": 3,
+        "created_at": "2025-12-22T13:57:27.836Z"
+    }
+},
+{
+    "model": "frisson_music.rating",
+    "pk": 6,
+    "fields": {
+        "user": 1,
+        "album": 28,
+        "score": 5,
+        "created_at": "2025-12-23T11:00:39.808Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "album": 32,
+        "text": "Wow!",
+        "created_at": "2025-12-21T08:41:50.528Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 2,
+    "fields": {
+        "user": 2,
+        "album": 32,
+        "text": "reoekf",
+        "created_at": "2025-12-21T08:43:16.296Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 3,
+    "fields": {
+        "user": 2,
+        "album": 32,
+        "text": "khg",
+        "created_at": "2025-12-21T08:53:51.988Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "album": 32,
+        "text": "kjshdfkrjb",
+        "created_at": "2025-12-21T11:12:16.445Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "album": 32,
+        "text": ",ajdnbvfkjsd",
+        "created_at": "2025-12-21T11:12:29.136Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 6,
+    "fields": {
+        "user": 1,
+        "album": 32,
+        "text": "kjwvfnlwrn",
+        "created_at": "2025-12-21T11:12:33.135Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 8,
+    "fields": {
+        "user": 2,
+        "album": 29,
+        "text": "kjhb",
+        "created_at": "2025-12-21T20:16:30.764Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 9,
+    "fields": {
+        "user": 2,
+        "album": 29,
+        "text": "kjasd",
+        "created_at": "2025-12-21T20:24:33.029Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 11,
+    "fields": {
+        "user": 2,
+        "album": 28,
+        "text": "kjjbkj",
+        "created_at": "2025-12-21T20:34:39.543Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 13,
+    "fields": {
+        "user": 2,
+        "album": 27,
+        "text": "Wow!",
+        "created_at": "2025-12-22T13:58:18.295Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 14,
+    "fields": {
+        "user": 2,
+        "album": 27,
+        "text": "Nice))",
+        "created_at": "2025-12-22T13:58:24.966Z"
+    }
+},
+{
+    "model": "frisson_music.comment",
+    "pk": 15,
+    "fields": {
+        "user": 1,
+        "album": 27,
+        "text": "Superrr!",
+        "created_at": "2025-12-22T13:58:53.974Z"
+    }
+}
+]

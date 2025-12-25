@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="row">
+      {% for album in albums %}
+        <div class="col-md-3 mb-4">
+          <div class="card h-100">
+            <a href="{% url 'album-detail' album.id %}">
+            <img src="{{ album.cover_image_url }}" class="card-img-top" alt="{{ album.album_title }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ album.album_title }}</h5>
+              <p class="card-text">
+                {{ album.artists }}<br>
+                {{ album.release_date }}
+              </p>
+              <a href="{{ album.spotify_url }}" target="_blank" class="btn btn-sm btn-primary">
+                Spotify
+              </a>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <p>DataBase is Empty 😢</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
