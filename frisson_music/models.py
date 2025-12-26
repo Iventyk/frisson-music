@@ -3,6 +3,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.urls import reverse
+from datetime import date
 
 
 class User(AbstractUser):
@@ -23,17 +24,46 @@ class Album(models.Model):
         GAME = "GAME", "Game"
         MOVIE = "MOVIE", "Movie"
 
+    class ReleaseDatePrecision(models.TextChoices):
+        YEAR = "year", "Year"
+        MONTH = "month", "Month"
+        DAY = "day", "Day"
+
     media_type = models.CharField(max_length=10, choices=MediaType.choices)
     media_title = models.CharField(max_length=255)
     album_title = models.CharField(max_length=255)
     cover_image_url = models.URLField()
     part_or_season = models.CharField(max_length=255, default="Unknown")
-    release_date = models.CharField(max_length=10, default="Unknown")
+    release_date = models.DateField(null=True)
+    release_date_precision = models.CharField(
+        max_length=10,
+        choices=ReleaseDatePrecision.choices,
+        null=True,
+    )
     artists = models.TextField(help_text="Comma-separated list of artists")
     tracklist = models.TextField(help_text="Each track on a new line")
     total_tracks = models.PositiveIntegerField()
     spotify_url = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    @staticmethod
+    def parse_release_date(value: str):
+        """
+        Convert release_date from Spotify to DateField
+        """
+        parts = value.split("-")
+        year = int(parts[0])
+        month = int(parts[1]) if len(parts) > 1 else 1
+        day = int(parts[2]) if len(parts) > 2 else 1
+
+        if len(parts) == 1:
+            precision = Album.ReleaseDatePrecision.YEAR
+        elif len(parts) == 2:
+            precision = Album.ReleaseDatePrecision.MONTH
+        else:
+            precision = Album.ReleaseDatePrecision.DAY
+
+        return date(year, month, day), precision
 
     def get_absolute_url(self):
         return reverse("frisson_music:album-detail", kwargs={"pk": self.pk})
