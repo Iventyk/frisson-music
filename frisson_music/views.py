@@ -2,6 +2,7 @@ from collections import defaultdict
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Avg
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.views.generic import (
@@ -71,33 +72,29 @@ class AlbumDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        # Comments
-        context["comments"] = (self.object.comments.select_related("user")
-                               .order_by("-created_at"))
+        # --- Comments ---
+        context["comments"] = (
+            self.object.comments.select_related("user")
+            .order_by("-created_at")
+        )
         context["comment_form"] = CommentForm()
 
-        # Rating: Average
-        ratings = self.object.ratings.select_related("user").all()
-        if ratings.exists():
-            avg = round(sum(r.score for r in ratings) / ratings.count(), 1)
-        else:
-            avg = 0
-        context["average_rating"] = avg
+        # --- Rating: Average ---
+        avg = self.object.ratings.aggregate(avg_score=Avg("score"))["avg_score"] or 0
+        context["average_rating"] = round(avg, 1)
 
-        # User's Rating
+        # --- User's Rating ---
         user_rating = None
         if self.request.user.is_authenticated:
-            try:
-                user_rating = Rating.objects.get(album=self.object,
-                                                 user=self.request.user)
-            except Rating.DoesNotExist:
-                user_rating = None
+            user_rating = Rating.objects.filter(
+                album=self.object, user=self.request.user
+            ).first()
         context["user_rating"] = user_rating
 
-        # Stars for template
+        # --- Stars for template ---
         context["stars"] = [1, 2, 3, 4, 5]
 
-        # Rating form
+        # --- Rating form ---
         context["rating_form"] = RatingForm()
 
         return context
@@ -105,7 +102,7 @@ class AlbumDetailView(DetailView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
 
-        # Comment submission
+        # --- Comment submission ---
         if "text" in request.POST:
             if not request.user.is_authenticated:
                 return redirect("login")
@@ -117,7 +114,7 @@ class AlbumDetailView(DetailView):
                 comment.save()
             return redirect("album-detail", pk=self.object.pk)
 
-        # Rating submission
+        # --- Rating submission ---
         if "score" in request.POST:
             if not request.user.is_authenticated:
                 return redirect("login")

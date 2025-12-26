@@ -2,6 +2,7 @@ from django.conf import settings
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.db.models import Avg
 from django.urls import reverse
 from datetime import date
 
@@ -70,9 +71,9 @@ class Album(models.Model):
 
     @property
     def average_rating(self):
-        ratings = self.ratings.all()
-        if ratings.exists():
-            return round(sum(r.score for r in ratings) / ratings.count(), 2)
+        avg = self.ratings.aggregate(avg_score=Avg("score"))["avg_score"]
+        if avg is not None:
+            return round(avg, 2)
         return None
 
 
