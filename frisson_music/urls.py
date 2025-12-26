@@ -13,6 +13,7 @@ from .views import (
 
 
 urlpatterns = [
+    path("__debug__/", include("debug_toolbar.urls")),
     path("", HomePageView.as_view(), name="home"),
     path("register/", RegisterView.as_view(), name="register"),
     path("accounts/", include("django.contrib.auth.urls")),
