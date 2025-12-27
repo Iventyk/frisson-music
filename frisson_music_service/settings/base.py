@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "frisson_music",
     "bootstrap4",
     "debug_toolbar",
+    "django.contrib.postgres",
 ]
 
 MIDDLEWARE = [

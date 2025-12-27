@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.contrib.postgres.indexes import GinIndex
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import AbstractUser
 from django.db import models
@@ -59,6 +60,19 @@ class Album(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     objects = AlbumQuerySet.as_manager()
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["media_title"], name="idx_media_title"),
+
+            GinIndex(
+                name="idx_album_title_trgm",
+                fields=["album_title"],
+                opclasses=["gin_trgm_ops"]
+            ),
+
+            models.Index(fields=["release_date"], name="idx_release_date"),
+        ]
 
     def get_absolute_url(self):
         return reverse("frisson_music:album-detail", kwargs={"pk": self.pk})
