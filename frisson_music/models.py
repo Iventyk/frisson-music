@@ -18,6 +18,17 @@ class User(AbstractUser):
         verbose_name_plural = "users"
 
 
+class AlbumQuerySet(models.QuerySet):
+    def latest_by_type(self, media_type, n=5):
+        return self.filter(media_type=media_type).order_by("-release_date")[:n]
+
+    def by_media_title(self, media_title, media_type=None):
+        qs = self.filter(media_title=media_title)
+        if media_type:
+            qs = qs.filter(media_type=media_type)
+        return qs.order_by("part_or_season", "-release_date")
+
+
 class Album(models.Model):
     class MediaType(models.TextChoices):
         ANIME = "ANIME", "Anime"
@@ -47,11 +58,13 @@ class Album(models.Model):
     spotify_url = models.URLField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    objects = AlbumQuerySet.as_manager()
+
+    def get_absolute_url(self):
+        return reverse("frisson_music:album-detail", kwargs={"pk": self.pk})
+
     @staticmethod
     def parse_release_date(value: str):
-        """
-        Convert release_date from Spotify to DateField
-        """
         parts = value.split("-")
         year = int(parts[0])
         month = int(parts[1]) if len(parts) > 1 else 1
@@ -66,24 +79,13 @@ class Album(models.Model):
 
         return date(year, month, day), precision
 
-    def get_absolute_url(self):
-        return reverse("frisson_music:album-detail", kwargs={"pk": self.pk})
-
-    @property
     def average_rating(self):
-        avg = self.ratings.aggregate(avg_score=Avg("score"))["avg_score"]
-        if avg is not None:
-            return round(avg, 2)
-        return None
+        return self.ratings.aggregate(avg_score=Avg("score"))["avg_score"] or 0
 
 
 class Rating(models.Model):
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
-    )
-    album = models.ForeignKey(
-        Album, on_delete=models.CASCADE, related_name="ratings"
-    )
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name="ratings")
     score = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)]
     )
@@ -94,11 +96,7 @@ class Rating(models.Model):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
-    )
-    album = models.ForeignKey(
-        Album, on_delete=models.CASCADE, related_name="comments"
-    )
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name="comments")
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

@@ -1,25 +1,11 @@
 from collections import defaultdict
-
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.db.models import Avg
 from django.shortcuts import redirect, get_object_or_404
-from django.urls import reverse_lazy, reverse
-from django.views.generic import (
-    ListView,
-    DetailView,
-    UpdateView,
-    TemplateView,
-    CreateView
-)
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, UpdateView, TemplateView, CreateView
 
-from .forms import (
-    AlbumUpdateForm,
-    CustomUserCreationForm,
-    UserUpdateForm,
-    CommentForm,
-    RatingForm
-)
+from .forms import AlbumUpdateForm, CustomUserCreationForm, UserUpdateForm, CommentForm, RatingForm
 from .models import Album, User, Rating, Comment
 
 
@@ -28,19 +14,10 @@ class HomePageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
-        albums = (
-            Album.objects
-            .order_by("-release_date")
-        )
-
-        context["latest"] = {
-            "ANIME": albums.filter(media_type="ANIME")[:5],
-            "SERIES": albums.filter(media_type="SERIES")[:5],
-            "GAME": albums.filter(media_type="GAME")[:5],
-            "MOVIE": albums.filter(media_type="MOVIE")[:5],
-        }
-
+        latest = {}
+        for media_type in ["ANIME", "SERIES", "GAME", "MOVIE"]:
+            latest[media_type] = Album.objects.latest_by_type(media_type)
+        context["latest"] = latest
         return context
 
 
@@ -51,17 +28,14 @@ class AlbumListView(ListView):
     paginate_by = 32
 
     def get_queryset(self):
-        queryset = super().get_queryset()
+        qs = super().get_queryset()
         album_type = self.kwargs.get("album_type")
-        search_query = self.request.GET.get("search")
-
+        search = self.request.GET.get("search")
         if album_type:
-            queryset = queryset.filter(media_type=album_type)
-
-        if search_query:
-            queryset = queryset.filter(album_title__icontains=search_query)
-
-        return queryset
+            qs = qs.filter(media_type=album_type)
+        if search:
+            qs = qs.filter(album_title__icontains=search)
+        return qs
 
 
 class AlbumDetailView(DetailView):
@@ -70,65 +44,48 @@ class AlbumDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        album = self.object
 
         # --- Comments ---
-        context["comments"] = (
-            self.object.comments.select_related("user")
-            .order_by("-created_at")
-        )
+        context["comments"] = album.comments.select_related("user").order_by("-created_at")
         context["comment_form"] = CommentForm()
 
         # --- Rating: Average ---
-        avg = self.object.ratings.aggregate(avg_score=Avg("score"))["avg_score"] or 0
-        context["average_rating"] = round(avg, 1)
+        context["average_rating"] = round(album.average_rating(), 1)
 
         # --- User's Rating ---
-        user_rating = None
         if self.request.user.is_authenticated:
-            user_rating = Rating.objects.filter(
-                album=self.object, user=self.request.user
-            ).first()
-        context["user_rating"] = user_rating
+            context["user_rating"] = album.ratings.filter(user=self.request.user).first()
+        else:
+            context["user_rating"] = None
 
-        # --- Stars for template ---
         context["stars"] = [1, 2, 3, 4, 5]
-
-        # --- Rating form ---
         context["rating_form"] = RatingForm()
-
         return context
 
     def post(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        redirect_response = redirect("album-detail", pk=self.object.pk)
+        album = self.get_object()
+        redirect_response = redirect("album-detail", pk=album.pk)
 
         # --- Comment submission ---
-        if "text" in request.POST:
-            if not request.user.is_authenticated:
-                return redirect("login")
-
+        if "text" in request.POST and request.user.is_authenticated:
             form = CommentForm(request.POST)
             if form.is_valid():
                 comment = form.save(commit=False)
-                comment.album = self.object
+                comment.album = album
                 comment.user = request.user
                 comment.save()
-
             return redirect_response
 
         # --- Rating submission ---
-        if "score" in request.POST:
-            if not request.user.is_authenticated:
-                return redirect("login")
-
-            rating_value = int(request.POST.get("score", 0))
-            if 1 <= rating_value <= 5:
+        if "score" in request.POST and request.user.is_authenticated:
+            score = int(request.POST.get("score", 0))
+            if 1 <= score <= 5:
                 Rating.objects.update_or_create(
-                    album=self.object,
+                    album=album,
                     user=request.user,
-                    defaults={"score": rating_value}
+                    defaults={"score": score}
                 )
-
             return redirect_response
 
         return redirect_response
@@ -139,7 +96,7 @@ class AlbumUpdateView(LoginRequiredMixin, UpdateView):
     form_class = AlbumUpdateForm
 
     def get_success_url(self):
-        return reverse("album-detail", kwargs={"pk": self.object.pk})
+        return reverse_lazy("album-detail", kwargs={"pk": self.object.pk})
 
 
 class MediaListView(ListView):
@@ -148,14 +105,11 @@ class MediaListView(ListView):
     paginate_by = 15
 
     def get_queryset(self):
-        return (
-            Album.objects
-            .exclude(media_title__isnull=True)
-            .exclude(media_title__exact="")
-            .order_by("media_title")
-            .values("media_title", "media_type")
+        return Album.objects.exclude(media_title__isnull=True) \
+            .exclude(media_title="") \
+            .order_by("media_title") \
+            .values("media_title", "media_type") \
             .distinct()
-        )
 
 
 class MediaDetailView(ListView):
@@ -166,24 +120,18 @@ class MediaDetailView(ListView):
     def get_queryset(self):
         media_title = self.kwargs.get("media_title")
         media_type = self.request.GET.get("type")
+        return Album.objects.by_media_title(media_title, media_type).select_related()
 
-        queryset = Album.objects.filter(media_title=media_title)
-        if media_type:
-            queryset = queryset.filter(media_type=media_type)
-
-        return queryset.order_by("part_or_season", "-release_date")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
+        albums = context["albums"]
+        grouped = defaultdict(list)
+        for album in albums:
+            grouped[album.part_or_season].append(album)
+        context["grouped_albums"] = dict(sorted(grouped.items()))
         context["media_title"] = self.kwargs.get("media_title")
         context["media_type"] = self.request.GET.get("type")
-
-        grouped_albums = defaultdict(list)
-        for album in context["albums"]:
-            grouped_albums[album.part_or_season].append(album)
-
-        context["grouped_albums"] = dict(sorted(grouped_albums.items()))
         return context
 
 
