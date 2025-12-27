@@ -29,18 +29,17 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context["latest_anime"] = Album.objects.filter(
-            media_type="ANIME"
-        ).order_by('-release_date')[:5]
-        context["latest_series"] = Album.objects.filter(
-            media_type="SERIES"
-        ).order_by('-release_date')[:5]
-        context["latest_game"] = Album.objects.filter(
-            media_type="GAME"
-        ).order_by('-release_date')[:5]
-        context["latest_movie"] = Album.objects.filter(
-            media_type="MOVIE"
-        ).order_by('-release_date')[:5]
+        albums = (
+            Album.objects
+            .order_by("-release_date")
+        )
+
+        context["latest"] = {
+            "ANIME": albums.filter(media_type="ANIME")[:5],
+            "SERIES": albums.filter(media_type="SERIES")[:5],
+            "GAME": albums.filter(media_type="GAME")[:5],
+            "MOVIE": albums.filter(media_type="MOVIE")[:5],
+        }
 
         return context
 
@@ -162,25 +161,23 @@ class MediaDetailView(ListView):
     def get_queryset(self):
         media_title = self.kwargs.get("media_title")
         media_type = self.request.GET.get("type")
+
         queryset = Album.objects.filter(media_title=media_title)
         if media_type:
             queryset = queryset.filter(media_type=media_type)
+
         return queryset.order_by("part_or_season", "-release_date")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        media_title = self.kwargs.get("media_title")
-        media_type = self.request.GET.get("type")
-        context["media_title"] = media_title
-        context["media_type"] = media_type
 
-        # Group by Part/Season
-        albums = self.get_queryset()
+        context["media_title"] = self.kwargs.get("media_title")
+        context["media_type"] = self.request.GET.get("type")
+
         grouped_albums = defaultdict(list)
-        for album in albums:
+        for album in context["albums"]:
             grouped_albums[album.part_or_season].append(album)
 
-        # Sort by key
         context["grouped_albums"] = dict(sorted(grouped_albums.items()))
         return context
 

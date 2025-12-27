@@ -37,7 +37,7 @@
           </div>
           <div class="card-body">
             <div class="row">
-              {% for album in latest_anime %}
+              {% for album in latest.ANIME %}
                 <div class="col-md-2 col-sm-4 col-6">
                   <a href="{% url 'album-detail' album.pk %}">
                     <img src="{{ album.cover_image_url }}"
@@ -65,7 +65,7 @@
           </div>
           <div class="card-body">
             <div class="row">
-              {% for album in latest_series %}
+              {% for album in latest.SERIES %}
                 <div class="col-md-2 col-sm-4 col-6">
                   <a href="{% url 'album-detail' album.pk %}">
                     <img src="{{ album.cover_image_url }}"
@@ -93,7 +93,7 @@
           </div>
           <div class="card-body">
             <div class="row">
-              {% for album in latest_game %}
+              {% for album in latest.GAME %}
                 <div class="col-md-2 col-sm-4 col-6">
                   <a href="{% url 'album-detail' album.pk %}">
                     <img src="{{ album.cover_image_url }}"
@@ -121,7 +121,7 @@
           </div>
           <div class="card-body">
             <div class="row">
-              {% for album in latest_movie %}
+              {% for album in latest.MOVIE %}
                 <div class="col-md-2 col-sm-4 col-6">
                   <a href="{% url 'album-detail' album.pk %}">
                     <img src="{{ album.cover_image_url }}"
