@@ -6,18 +6,22 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('frisson_music', '0002_alter_user_is_active'),
+        ("frisson_music", "0002_alter_user_is_active"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='album',
-            name='release_date_precision',
-            field=models.CharField(choices=[('year', 'Year'), ('month', 'Month'), ('day', 'Day')], max_length=10, null=True),
+            model_name="album",
+            name="release_date_precision",
+            field=models.CharField(
+                choices=[("year", "Year"), ("month", "Month"), ("day", "Day")],
+                max_length=10,
+                null=True,
+            ),
         ),
         migrations.AlterField(
-            model_name='album',
-            name='release_date',
+            model_name="album",
+            name="release_date",
             field=models.DateField(null=True),
         ),
     ]

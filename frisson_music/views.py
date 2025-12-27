@@ -3,9 +3,21 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, UpdateView, TemplateView, CreateView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    UpdateView,
+    TemplateView,
+    CreateView,
+)
 
-from .forms import AlbumUpdateForm, CustomUserCreationForm, UserUpdateForm, CommentForm, RatingForm
+from .forms import (
+    AlbumUpdateForm,
+    CustomUserCreationForm,
+    UserUpdateForm,
+    CommentForm,
+    RatingForm,
+)
 from .models import Album, User, Rating, Comment
 
 
@@ -40,8 +52,8 @@ class AlbumListView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         query_params = self.request.GET.copy()
-        query_params.pop('page', None)
-        context['query_params'] = query_params.urlencode()
+        query_params.pop("page", None)
+        context["query_params"] = query_params.urlencode()
         return context
 
 
@@ -54,7 +66,9 @@ class AlbumDetailView(DetailView):
         album = self.object
 
         # --- Comments ---
-        context["comments"] = album.comments.select_related("user").order_by("-created_at")
+        context["comments"] = album.comments.select_related("user").order_by(
+            "-created_at"
+        )
         context["comment_form"] = CommentForm()
 
         # --- Rating: Average ---
@@ -62,7 +76,9 @@ class AlbumDetailView(DetailView):
 
         # --- User's Rating ---
         if self.request.user.is_authenticated:
-            context["user_rating"] = album.ratings.filter(user=self.request.user).first()
+            context["user_rating"] = album.ratings.filter(
+                user=self.request.user
+            ).first()
         else:
             context["user_rating"] = None
 
@@ -89,9 +105,7 @@ class AlbumDetailView(DetailView):
             score = int(request.POST.get("score", 0))
             if 1 <= score <= 5:
                 Rating.objects.update_or_create(
-                    album=album,
-                    user=request.user,
-                    defaults={"score": score}
+                    album=album, user=request.user, defaults={"score": score}
                 )
             return redirect_response
 
@@ -112,11 +126,13 @@ class MediaListView(ListView):
     paginate_by = 15
 
     def get_queryset(self):
-        return Album.objects.exclude(media_title__isnull=True) \
-            .exclude(media_title="") \
-            .order_by("media_title") \
-            .values("media_title", "media_type") \
+        return (
+            Album.objects.exclude(media_title__isnull=True)
+            .exclude(media_title="")
+            .order_by("media_title")
+            .values("media_title", "media_type")
             .distinct()
+        )
 
 
 class MediaDetailView(ListView):
@@ -127,8 +143,9 @@ class MediaDetailView(ListView):
     def get_queryset(self):
         media_title = self.kwargs.get("media_title")
         media_type = self.request.GET.get("type")
-        return Album.objects.by_media_title(media_title, media_type).select_related()
-
+        return Album.objects.by_media_title(
+            media_title, media_type
+        ).select_related()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

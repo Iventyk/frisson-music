@@ -11,14 +11,10 @@ class TestRatings(TestCase):
 
     def setUp(self):
         self.user1 = User.objects.create_user(
-            username="testuser1",
-            email="user1@example.com",
-            password="12345"
+            username="testuser1", email="user1@example.com", password="12345"
         )
         self.user2 = User.objects.create_user(
-            username="testuser2",
-            email="user2@example.com",
-            password="12345"
+            username="testuser2", email="user2@example.com", password="12345"
         )
 
         self.album = Album.objects.create(
@@ -27,41 +23,24 @@ class TestRatings(TestCase):
             media_type="ANIME",
             total_tracks=10,
             part_or_season="1",
-            release_date="2025-12-21"
+            release_date="2025-12-21",
         )
 
     def test_user_can_rate_album_once(self):
-        Rating.objects.create(
-            user=self.user1,
-            album=self.album,
-            score=4
-        )
+        Rating.objects.create(user=self.user1, album=self.album, score=4)
 
         Rating.objects.update_or_create(
-            user=self.user1,
-            album=self.album,
-            defaults={"score": 2}
+            user=self.user1, album=self.album, defaults={"score": 2}
         )
 
-        ratings = Rating.objects.filter(
-            user=self.user1,
-            album=self.album
-        )
+        ratings = Rating.objects.filter(user=self.user1, album=self.album)
 
         self.assertEqual(ratings.count(), 1)
         self.assertEqual(ratings.first().score, 2)
 
     def test_average_rating_calculation(self):
-        Rating.objects.create(
-            user=self.user1,
-            album=self.album,
-            score=4
-        )
-        Rating.objects.create(
-            user=self.user2,
-            album=self.album,
-            score=2
-        )
+        Rating.objects.create(user=self.user1, album=self.album, score=4)
+        Rating.objects.create(user=self.user2, album=self.album, score=2)
 
         ratings = self.album.ratings.all()
         avg_rating = sum(r.score for r in ratings) / ratings.count()

@@ -13,7 +13,7 @@ class TestMediaViews(TestCase):
             media_type="ANIME",
             total_tracks=10,
             part_or_season="1",
-            release_date="2025-12-21"
+            release_date="2025-12-21",
         )
         Album.objects.create(
             album_title="OST 2",
@@ -21,7 +21,7 @@ class TestMediaViews(TestCase):
             media_type="ANIME",
             total_tracks=10,
             part_or_season="1",
-            release_date="2025-12-21"
+            release_date="2025-12-21",
         )
 
         response = self.client.get(reverse("media-list"))
@@ -37,7 +37,7 @@ class TestMediaViews(TestCase):
             media_type="ANIME",
             total_tracks=10,
             part_or_season="1",
-            release_date="2025-12-21"
+            release_date="2025-12-21",
         )
         Album.objects.create(
             album_title="Movie OST",
@@ -45,7 +45,7 @@ class TestMediaViews(TestCase):
             media_type="MOVIE",
             total_tracks=10,
             part_or_season="1",
-            release_date="2025-12-21"
+            release_date="2025-12-21",
         )
 
         response = self.client.get(reverse("media-detail", args=["AOT"]))

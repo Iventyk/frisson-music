@@ -10,9 +10,7 @@ User = get_user_model()
 @pytest.mark.django_db
 def test_user_can_rate_album_once():
     user = User.objects.create_user(
-        username="testuser",
-        email="user1@example.com",
-        password="12345"
+        username="testuser", email="user1@example.com", password="12345"
     )
     album = Album.objects.create(
         album_title="OST",
@@ -20,15 +18,13 @@ def test_user_can_rate_album_once():
         media_type="ANIME",
         total_tracks=10,
         part_or_season="1",
-        release_date="2025-12-21"
+        release_date="2025-12-21",
     )
 
     Rating.objects.create(user=user, album=album, score=4)
 
     Rating.objects.update_or_create(
-        user=user,
-        album=album,
-        defaults={"score": 2}
+        user=user, album=album, defaults={"score": 2}
     )
 
     rating = Rating.objects.get(user=user, album=album)

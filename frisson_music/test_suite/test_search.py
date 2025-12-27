@@ -13,7 +13,7 @@ class TestAlbumSearch(TestCase):
             media_type="ANIME",
             total_tracks=10,
             part_or_season="1",
-            release_date="2025-12-21"
+            release_date="2025-12-21",
         )
         Album.objects.create(
             album_title="Random Album",
@@ -21,19 +21,14 @@ class TestAlbumSearch(TestCase):
             media_type="ANIME",
             total_tracks=10,
             part_or_season="1",
-            release_date="2025-12-21"
+            release_date="2025-12-21",
         )
 
     def test_search_by_album_title(self):
-        response = self.client.get(
-            reverse("album-list") + "?search=best"
-        )
+        response = self.client.get(reverse("album-list") + "?search=best")
 
         self.assertEqual(response.status_code, 200)
 
         albums = response.context["albums"]
         self.assertEqual(albums.count(), 1)
-        self.assertIn(
-            "Best",
-            albums.first().album_title
-        )
+        self.assertIn("Best", albums.first().album_title)

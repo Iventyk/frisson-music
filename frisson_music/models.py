@@ -64,13 +64,11 @@ class Album(models.Model):
     class Meta:
         indexes = [
             models.Index(fields=["media_title"], name="idx_media_title"),
-
             GinIndex(
                 name="idx_album_title_trgm",
                 fields=["album_title"],
-                opclasses=["gin_trgm_ops"]
+                opclasses=["gin_trgm_ops"],
             ),
-
             models.Index(fields=["release_date"], name="idx_release_date"),
         ]
 
@@ -98,8 +96,12 @@ class Album(models.Model):
 
 
 class Rating(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name="ratings")
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
+    )
+    album = models.ForeignKey(
+        Album, on_delete=models.CASCADE, related_name="ratings"
+    )
     score = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)]
     )
@@ -110,7 +112,11 @@ class Rating(models.Model):
 
 
 class Comment(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name="comments")
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE
+    )
+    album = models.ForeignKey(
+        Album, on_delete=models.CASCADE, related_name="comments"
+    )
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)

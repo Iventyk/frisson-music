@@ -7,20 +7,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('frisson_music', '0003_album_release_date_precision_and_more'),
+        ("frisson_music", "0003_album_release_date_precision_and_more"),
     ]
 
     operations = [
         migrations.AddIndex(
-            model_name='album',
-            index=models.Index(fields=['media_title'], name='idx_media_title'),
+            model_name="album",
+            index=models.Index(fields=["media_title"], name="idx_media_title"),
         ),
         migrations.AddIndex(
-            model_name='album',
-            index=django.contrib.postgres.indexes.GinIndex(fields=['album_title'], name='idx_album_title_trgm', opclasses=['gin_trgm_ops']),
+            model_name="album",
+            index=django.contrib.postgres.indexes.GinIndex(
+                fields=["album_title"],
+                name="idx_album_title_trgm",
+                opclasses=["gin_trgm_ops"],
+            ),
         ),
         migrations.AddIndex(
-            model_name='album',
-            index=models.Index(fields=['release_date'], name='idx_release_date'),
+            model_name="album",
+            index=models.Index(
+                fields=["release_date"], name="idx_release_date"
+            ),
         ),
     ]
