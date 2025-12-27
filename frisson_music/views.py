@@ -100,23 +100,27 @@ class AlbumDetailView(DetailView):
 
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
+        redirect_response = redirect("album-detail", pk=self.object.pk)
 
         # --- Comment submission ---
         if "text" in request.POST:
             if not request.user.is_authenticated:
                 return redirect("login")
+
             form = CommentForm(request.POST)
             if form.is_valid():
                 comment = form.save(commit=False)
                 comment.album = self.object
                 comment.user = request.user
                 comment.save()
-            return redirect("album-detail", pk=self.object.pk)
+
+            return redirect_response
 
         # --- Rating submission ---
         if "score" in request.POST:
             if not request.user.is_authenticated:
                 return redirect("login")
+
             rating_value = int(request.POST.get("score", 0))
             if 1 <= rating_value <= 5:
                 Rating.objects.update_or_create(
@@ -124,9 +128,10 @@ class AlbumDetailView(DetailView):
                     user=request.user,
                     defaults={"score": rating_value}
                 )
-            return redirect("album-detail", pk=self.object.pk)
 
-        return redirect("album-detail", pk=self.object.pk)
+            return redirect_response
+
+        return redirect_response
 
 
 class AlbumUpdateView(LoginRequiredMixin, UpdateView):
