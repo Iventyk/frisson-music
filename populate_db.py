@@ -3,14 +3,15 @@ import django
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
-from frisson_music.models import Album
-
 
 # --- Django setup ---
 os.environ.setdefault(
-    "DJANGO_SETTINGS_MODULE", "frisson_music_service.settings"
+    "DJANGO_SETTINGS_MODULE", "frisson_music_service.settings.prod"
 )
+
 django.setup()
+
+from frisson_music.models import Album
 
 # --- Spotify setup ---
 CLIENT_ID = "Your_spotify_client_id"
