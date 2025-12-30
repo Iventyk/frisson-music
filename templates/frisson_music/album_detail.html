@@ -123,7 +123,27 @@
     <!-- ===== BOTTOM PART ===== -->
     <div class="row mt-5">
 
-      <!-- LEFT: COMMENTS -->
+      <!-- LEFT: TRACKLIST -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">
+              Tracklist
+              <span class="text-muted" style="font-size: 0.8em;">
+              ({{ album.total_tracks }} tracks)
+            </span>
+            </h4>
+
+            <ol class="mt-3">
+              {% for track in album.tracklist.splitlines %}
+                <li>{{ track }}</li>
+              {% endfor %}
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: COMMENTS -->
       <div class="col-md-6">
         <div class="card">
           <div class="card-body">
@@ -160,26 +180,6 @@
                 {% endif %}
               </div>
             {% endfor %}
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT: TRACKLIST -->
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <h4 class="card-title">
-              Tracklist
-              <span class="text-muted" style="font-size: 0.8em;">
-              ({{ album.total_tracks }} tracks)
-            </span>
-            </h4>
-
-            <ol class="mt-3">
-              {% for track in album.tracklist.splitlines %}
-                <li>{{ track }}</li>
-              {% endfor %}
-            </ol>
           </div>
         </div>
       </div>
