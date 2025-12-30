@@ -20,7 +20,7 @@ class User(AbstractUser):
 
 
 class AlbumQuerySet(models.QuerySet):
-    def latest_by_type(self, media_type, n=5):
+    def latest_by_type(self, media_type, n=6):
         return self.filter(media_type=media_type).order_by("-release_date")[:n]
 
     def by_media_title(self, media_title, media_type=None):
