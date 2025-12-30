@@ -37,7 +37,7 @@ class AlbumListView(ListView):
     model = Album
     context_object_name = "albums"
     ordering = ["-release_date"]
-    paginate_by = 32
+    paginate_by = 36
 
     def get_queryset(self):
         qs = super().get_queryset()
