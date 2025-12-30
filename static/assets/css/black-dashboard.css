@@ -17840,7 +17840,7 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .main-panel > .content {
-    padding: 78px 30px 30px 230px;
+    padding: 78px 30px 30px 250px;
     min-height: calc(100vh - 70px);
 }
 
