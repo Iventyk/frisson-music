@@ -127,12 +127,13 @@ The project supports optional database population via **Spotify API**.
 
 ---
 
-## UI Template
-
-- https://demos.creative-tim.com/black-dashboard/examples/dashboard.html
-
----
-
 ## Data Base Diagram
 
 ![Data_Base_Diagram](DB_Diagram.drawio.png)
+
+---
+
+## UI Template
+
+- https://demos.creative-tim.com/black-dashboard/examples/dashboard.html
+- https://github.com/creativetimofficial/black-dashboard
