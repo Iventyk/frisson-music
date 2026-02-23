@@ -1,0 +1,5 @@
+# Ignore everything inside static
+static/** linguist-vendored
+
+# Re-include my JavaScript file
+static/assets/js/rating.js linguist-vendored=false
