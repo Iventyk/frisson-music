@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+  <div class="container-fluid">
+    <div class="navbar-wrapper">
+      <div class="navbar-toggle d-inline">
+        <button type="button" class="navbar-toggler">
+          <span class="navbar-toggler-bar bar1"></span>
+          <span class="navbar-toggler-bar bar2"></span>
+          <span class="navbar-toggler-bar bar3"></span>
+        </button>
+      </div>
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <i class="tim-icons icon-sound-wave"></i>
+        Frisson Music
+      </a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+      <span class="navbar-toggler-bar navbar-kebab"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navigation">
+      <ul class="navbar-nav ml-auto align-items-center">
+
+        <!-- SEARCH -->
+        <li class="nav-item d-flex align-items-center mr-3">
+          <form method="get" action="{% url 'album-list' %}" class="d-flex align-items-center mb-0">
+
+            <input
+                type="text"
+                name="search"
+                value="{{ request.GET.search }}"
+                placeholder="Search..."
+                class="form-control search-input-navbar"
+            >
+
+            <button type="submit" class="btn btn-link search-button-navbar">
+              <i class="tim-icons icon-zoom-split"></i>
+            </button>
+
+          </form>
+        </li>
+
+        <!-- USER -->
+        {% if user.is_authenticated %}
+          <li class="nav-item d-flex align-items-center">
+            <a href="{% url 'profile-edit' %}" class="btn user-badge">
+              {{ user.username }}
+              <i class="tim-icons icon-single-02"></i>
+            </a>
+          </li>
+        {% else %}
+          <li class="nav-item d-flex align-items-center">
+            <a href="{% url 'login' %}" class="btn btn-outline-light btn-sm mr-2">Login</a>
+          </li>
+        {% endif %}
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i class="tim-icons icon-simple-remove"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

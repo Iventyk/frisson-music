@@ -1,0 +1,10 @@
+[tool.black]
+line-length = 79
+target-version = ["py313"]
+skip-string-normalization = false
+
+[tool.ruff]
+line-length = 79
+target-version = "py313"
+select = ["E", "F", "W", "C", "B"]
+extend-ignore = ["E203"]

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container-fluid">
+    <div class="row">
+      {% for album in albums %}
+        <div class="col-md-2 mb-0 d-flex">
+          <div class="card album-card w-100">
+            <a href="{% url "album-detail" album.id %}" class="text-decoration-none text-dark">
+
+              <div class="album-cover-wrapper">
+                <img
+                    src="{{ album.cover_image_url }}"
+                    class="card-img-top album-cover"
+                    alt="{{ album.album_title }}"
+                >
+              </div>
+
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title album-title">
+                  {{ album.album_title }}
+                </h6>
+
+                <div class="mt-auto">
+                  <div class="album-meta text-muted">
+                    {{ album.artists }}
+                  </div>
+                  <div class="album-meta text-muted">
+                    {{ album.release_date }}
+                  </div>
+                </div>
+              </div>
+
+            </a>
+          </div>
+        </div>
+      {% empty %}
+        <p>DataBase is Empty 😢</p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
